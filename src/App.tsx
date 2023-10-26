@@ -6,7 +6,7 @@ import MenuList from "./page/menu-list/menu-list.tsx";
 
 import config from './config/index.ts'
 
-console.log(config)
+
 
 function App() {
 
