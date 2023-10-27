@@ -13,8 +13,8 @@ function App() {
     return (
         <>
             <Routes>
-                <Route path="/" element={<MenuList/>}>
-                    <Route path="/button" element={<Button/>}/>
+                <Route path="/" element={<MenuList/> }>
+                    <Route index path="/button" element={<Button/>}/>
                 </Route>
             </Routes>
         </>

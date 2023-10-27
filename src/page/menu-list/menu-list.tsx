@@ -1,5 +1,5 @@
 import React from "react";
-import {Link, Outlet, Route, Routes} from "react-router-dom";
+import {Link, Navigate, Outlet, Route, Routes} from "react-router-dom";
 import Button from "../button/button"
 
 const MenuList = () => {
@@ -14,7 +14,8 @@ const MenuList = () => {
                     </div>)
                 })
             }
-
+            {/*重定向*/}
+            <Navigate to="/button"/>
             <Outlet/>
         </div>
     )
