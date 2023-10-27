@@ -1,5 +1,6 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import {Link, Outlet, Route, Routes} from "react-router-dom";
+import Button from "../button/button"
 
 const MenuList = () => {
     const list = [{title: '按钮组件', path: '/button'}]
@@ -13,6 +14,8 @@ const MenuList = () => {
                     </div>)
                 })
             }
+
+            <Outlet/>
         </div>
     )
 }
