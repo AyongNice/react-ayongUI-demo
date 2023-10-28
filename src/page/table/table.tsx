@@ -1,11 +1,11 @@
 import React from "react";
 
 
-const Table = () => {
+const TablePage = () => {
     return (
         <div>
             <h1>Table</h1>
         </div>
     )
 }
-export default Table
+export default TablePage
