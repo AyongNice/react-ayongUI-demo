@@ -1,22 +1,33 @@
 import React from "react";
 import {Link, Navigate, Outlet, Route, Routes} from "react-router-dom";
 import Button from "../button/button"
+import menu from './menu.module.less'
+
+import globle from "../../config/index.ts";
 
 const MenuList = () => {
-    const list = [{title: '按钮组件', path: '/button'}]
-
+//下载less 和 less-loader
     return (
-        <div>
-            {
-                list.map((_, i) => {
-                    return (<div key={i}>
-                        <Link to={_.path}>{_.title}</Link>
-                    </div>)
-                })
+        <div className={menu.warp}>
+            <div className={menu.leftNav}>
+                {
+                    globle.MENULIST.map((_, i) => {
+                        return (
+                            <div key={i}>
+                                <Link to={'/menu' + _.path}>{_.title}</Link>
+                            </div>
+                        )
+                    })
+                }
+            </div>
+
+            {/*重定向*/
             }
-            {/*重定向*/}
-            <Navigate to="/button"/>
-            <Outlet/>
+            {/*<Navigate to="/button" replace={true}/>*/}
+            <div className={menu.qutlet}>
+                <Outlet/>
+            </div>
+
         </div>
     )
 }

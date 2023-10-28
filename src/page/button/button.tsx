@@ -3,7 +3,7 @@ import React from "react";
 const Button = () => {
 
     return (
-        <div>123</div>
+        <div>button</div>
     )
 }
 export default Button
