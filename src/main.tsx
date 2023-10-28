@@ -1,15 +1,17 @@
+// @ts-ignore
 import React from 'react'
-import ReactDOM from 'react-dom'
+import ReactDOM, {createRoot} from 'react-dom/client'
 import App from './App.tsx'
 import './index.css'
 import {BrowserRouter} from "react-router-dom";
 
-ReactDOM.render(
+const root: ReactDOM.Root = createRoot(document.getElementById('root'));
+
+root.render(
     <BrowserRouter>
         <App/>
-    </BrowserRouter>,
-    document.getElementById('root')
-)
+    </BrowserRouter>
+);
 
 
 
