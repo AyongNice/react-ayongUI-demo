@@ -1,6 +1,5 @@
 import React from "react";
-import {Button} from "../../ayongUI/dist/AyongUI.es.js";
-import {ButtonProps} from "../../ayongUI/dist/button.d.ts";
+import {Button} from "../../ayongUI/index.ts";
 
 
 const ButtonPage = () => {

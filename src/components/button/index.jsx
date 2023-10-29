@@ -1,5 +1,5 @@
 import React from "react";
-// import './index.css'
+// import './index.module.less'
 
 const Button = () => {
     return (<div>Button</div>)
