@@ -1,13 +1,14 @@
 import React from "react";
-import {Button} from "../../ayongUI/index.js";
+import {Button} from "../../ayongUI/dist/AyongUI.es.js";
+import {ButtonProps} from "../../ayongUI/dist/button.d.ts";
 
-console.log(Button)
+
 const ButtonPage = () => {
 
     return (
         <div>
             <h1>button</h1>
-            <Button text={'测试'}/>
+            <Button text={'ces'}   />
         </div>
     )
 }
