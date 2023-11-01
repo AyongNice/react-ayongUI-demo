@@ -19,6 +19,7 @@ function App() {
                 <Route path="/menu" element={<MenuList/>}>
                     <Route path="/menu/button" element={<Button/>}/>
                     <Route path="/menu/table" element={<Table/>}/>
+
                 </Route>
 
             </Routes>
