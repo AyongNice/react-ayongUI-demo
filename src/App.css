@@ -12,12 +12,15 @@
 }
 
 .night {
+    padding: 15px;
+    box-sizing: border-box;
     color: var(--night-text-color);
     background: var(--light-background-color);
 }
 
 .light {
-
+    padding: 15px;
+    box-sizing: border-box;
     color: var(--light-text-color);
     background: var(--night-background-color);
 
