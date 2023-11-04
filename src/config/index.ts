@@ -9,6 +9,8 @@ const MENULIST: Menu[] = [
     {title: 'icon组件', path: '/icon', id: +new Date() + ''},
 ]
 
+const THEME: string[] = ['night', 'light'];//白天 .晚上主题
 export default {
-    MENULIST
+    MENULIST,
+    THEME
 }

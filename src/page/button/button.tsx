@@ -1,18 +1,24 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {Button} from "../../ayongUI/index.ts";
 
 // import {Button} from 'antd'
 import './index.less'
 
 const ButtonPage = () => {
-
+    const [theme, setTheme] = useState<string>('var(--light-a-color)')
+    useEffect(() => {
+        window.addEventListener('theme', (e) => {
+            console.log(e.detail.theme)
+            setTheme(e.detail.theme)
+        });
+    }, [])
     const onClick = () => {
         console.log(111)
     }
 
     return (
         <div>
-            <h1 onClick={onClick}>button</h1>
+            <h1 className={theme} onClick={onClick}>button</h1>
 
             <fieldset>
                 <legend>type 类型 设置</legend>
@@ -28,10 +34,8 @@ const ButtonPage = () => {
                 <legend>shape 形状 设置</legend>
                 <Button shape='strong'>直角-按钮</Button>
                 <Button shape='round'>round-椭圆钮</Button>
-
                 <Button type="primary" href='https://github.com/AyongNice/ayongUI'>href-跳转按钮</Button>
             </fieldset>
-
 
             <fieldset>
                 <legend>大小 size 设置</legend>

@@ -1,3 +1,42 @@
 #root {
- 
+    --night-background-color: #1b1919;
+    --light-text-color: #e4e4e0;
+    --light-background-color: #cff2c6;
+    --night-text-color: #000;
+    --light-a-color: #50ffd9;
+    --night-a-color: #0d1f59;
+}
+
+* {
+    margin: 0;
+}
+
+.night {
+    color: var(--night-text-color);
+    background: var(--light-background-color);
+}
+
+.light {
+
+    color: var(--light-text-color);
+    background: var(--night-background-color);
+
+}
+
+
+h1 {
+    color: var(--night-a-color);
+}
+
+/*a {*/
+/*    color: #50ffd9;*/
+/*}*/
+
+/*body {*/
+/*    color: #fff;*/
+/*    background: #1b1919;*/
+/*}*/
+
+fieldset {
+    border: 1px solid #565151;
 }
