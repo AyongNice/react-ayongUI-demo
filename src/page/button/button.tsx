@@ -1,24 +1,22 @@
 import React, {useEffect, useState} from "react";
 import {Button} from "../../ayongUI/index.ts";
 
-// import {Button} from 'antd'
 import './index.less'
 
 const ButtonPage = () => {
     const [theme, setTheme] = useState<string>('var(--light-a-color)')
     useEffect(() => {
         window.addEventListener('theme', (e) => {
-            console.log(e.detail.theme)
             setTheme(e.detail.theme)
         });
-    }, [])
+    }, [theme])
     const onClick = () => {
-        console.log(111)
     }
 
     return (
         <div>
-            <h1 className={theme} onClick={onClick}>button</h1>
+
+            <h1 onClick={onClick}>button</h1>
 
             <fieldset>
                 <legend>type 类型 设置</legend>

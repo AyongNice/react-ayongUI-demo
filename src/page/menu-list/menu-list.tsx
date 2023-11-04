@@ -5,10 +5,9 @@ import '../../App.css'
 import globle from "../../config/index.ts";
 
 const MenuList = () => {
-    const [theme, setTheme] = useState<string>('var(--light-a-color)')
+    const [theme, setTheme] = useState<string>(localStorage.getItem("theme"))
     useEffect(() => {
         window.addEventListener('theme', (e) => {
-            console.log(e.detail.theme)
             setTheme(e.detail.theme)
         });
     }, [])
