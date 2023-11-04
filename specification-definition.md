@@ -2,7 +2,7 @@
 
 1. 样式必须使用 model类型文件 类名使用 小驼峰
 2. 样式名必须使用组件 ayong 开头 ⚠️ 如果需要组件props 参数进行枚举 className 责不需要ayong开头 详情参考 button组件 .default .small .large
-3. 全局样式 必须在 config/style里 颜色必须统一使用 全局颜色
+3. 全局样式 必须在 config/style里 颜色必须统一使用 全局颜色变量
 
 ## 组件开发规范JS TS类型声明文件
 
