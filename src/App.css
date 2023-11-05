@@ -1,10 +1,10 @@
 #root {
-    --night-background-color: #1b1919;
+    --night-background-color: #101318;
+    --light-background-color: #fafff9;
     --light-text-color: #e4e4e0;
-    --light-background-color: #cff2c6;
-    --night-text-color: #000;
+    --night-text-color: #242d41;
     --light-a-color: #50ffd9;
-    --night-a-color: #0d1f59;
+    --night-a-color: #242d41;
 }
 
 * {
