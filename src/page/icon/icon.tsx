@@ -1,5 +1,3 @@
-import React from "react";
-import { StepBackwardOutlined } from "@ant-design/icons";
 import "./index.less";
 import { Alipay, Alert, PreviousStep } from "../../ayongUI/index.ts";
 
