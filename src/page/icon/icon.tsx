@@ -8,7 +8,7 @@ import Tab from "./components/tab.tsx";
 const Icon = () => {
   let tabData = [
     {
-      title: "样式一",
+      title: "线框风格",
       content: (
         <div>
           <Alipay className="icon" style={{ color: "#ff8e4a" }} />
@@ -18,11 +18,11 @@ const Icon = () => {
       ),
     },
     {
-      title: "样式二",
+      title: "实底风格",
       content: <div>111</div>,
     },
     {
-      title: "样式三",
+      title: "双色风格",
       content: <div>111</div>,
     },
   ];

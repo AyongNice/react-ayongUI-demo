@@ -5,22 +5,32 @@
 
 .tab-header {
   display: flex;
+
+  .tab-t {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 450px;
+    height: 30px;
+    border-radius: 6px;
+    background-color: #cfcdcd;
+  }
+
   // justify-content: space-between;
   .search {
     margin-left: 50px;
   }
   .tab-item {
     display: inline-block;
-    width: 200px;
+    width: 150px;
     height: 30px;
     text-align: center;
     line-height: 30px;
-    border-radius: 5px;
-    background-color: aliceblue;
-    border: 1px solid blue;
+    border-radius: 6px;
     cursor: pointer;
+    transition: all 0.4s ease-in-out;
   }
   .active {
-    background-color: #00d8ff;
+    background-color: #ffffff;
   }
 }
