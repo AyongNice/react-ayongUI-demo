@@ -7,11 +7,7 @@ const Tab = (props) => {
   return (
     <div className="tab">
       <ul className="tab-header">
-<<<<<<< HEAD
-        <div className="tab-t">
-=======
         <div>
->>>>>>> 79014d1 (tabq切换图标类型)
           {props.tabs.map((tab, index) => (
             <div
               // style={}
@@ -23,10 +19,6 @@ const Tab = (props) => {
             </div>
           ))}
         </div>
-<<<<<<< HEAD
-
-=======
->>>>>>> 79014d1 (tabq切换图标类型)
         <div className="search">搜索</div>
       </ul>
       <div className="tab-content">{props.tabs[activeTab].content}</div>
