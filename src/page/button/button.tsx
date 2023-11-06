@@ -2,13 +2,25 @@ import React, {useEffect, useState} from "react";
 import {Button} from "../../ayongUI/index.ts";
 
 import './index.less'
+import ReactMarkdown from 'react-markdown';
+import {marked} from 'marked';
 
 const ButtonPage = () => {
     const [theme, setTheme] = useState<string>('var(--light-a-color)')
+    const [html, setHtml] = useState('');
     useEffect(() => {
         window.addEventListener('theme', (e) => {
             setTheme(e.detail.theme)
         });
+
+        // 读取Markdown文件的内容
+        fetch('/public/button.md') // 可以使用相对路径或完整URL
+            .then((response) => response.text())
+            .then((data) => {
+                console.log(marked(data))
+                setHtml(marked(data))
+            })
+            .catch((error) => console.error(error));
     }, [theme])
     const onClick = () => {
     }
@@ -17,7 +29,11 @@ const ButtonPage = () => {
         <div>
 
             <h1 onClick={onClick}>button</h1>
-
+            {/*<div*/}
+            {/*    dangerouslySetInnerHTML={{*/}
+            {/*        __html: html,*/}
+            {/*    }}*/}
+            {/*/>*/}
             <fieldset>
                 <legend>type 类型 设置</legend>
                 <Button>默认类型</Button>
