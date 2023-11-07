@@ -7,7 +7,11 @@ const Tab = (props) => {
   return (
     <div className="tab">
       <ul className="tab-header">
+<<<<<<< HEAD
         <div>
+=======
+        <div className="tab-t">
+>>>>>>> dev
           {props.tabs.map((tab, index) => (
             <div
               // style={}
@@ -19,6 +23,10 @@ const Tab = (props) => {
             </div>
           ))}
         </div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> dev
         <div className="search">搜索</div>
       </ul>
       <div className="tab-content">{props.tabs[activeTab].content}</div>
