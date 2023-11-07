@@ -26,20 +26,16 @@
 
 }
 
-
-/*h1 {*/
-/*    color: var(--night-a-color);*/
-/*}*/
-
-/*a {*/
-/*    color: #50ffd9;*/
-/*}*/
-
-/*body {*/
-/*    color: #fff;*/
-/*    background: #1b1919;*/
-/*}*/
-
 fieldset {
     border: 1px solid #565151;
+}
+
+
+.show {
+    display: block;
+}
+
+
+.hide {
+    display: none;
 }
