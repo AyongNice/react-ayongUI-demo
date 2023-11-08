@@ -19,25 +19,40 @@ import {
 const them = {
     dark: duotoneDark,
 };
+import {copyText} from "../../utils/index.ts";
+import {Alert} from "@/ayongUI/index.ts";
+import style from './index.module.less'
 
-const OmsSyntaxHighlight = (props) => {
+interface OmsSyntax {
+    darkMode: string;
+    textContent: string;
+    language: string;
+    onClick?: () => void;
+}
 
-    const {
-        darkMode = 'atomDark',
-        textContent = '',
-        language = 'javascript'
-    } = props;
+const OmsSyntaxHighlight = ({
+                                darkMode = 'atomDark',
+                                textContent = '',
+                                language = 'javascript',
+                            }: OmsSyntax) => {
+
+
     if (!textContent) return
     return (
-        <SyntaxHighlighter
-            showLineNumbers={true} // 是否展示左侧行数
-            lineNumberStyle={{color: '#ddd', fontSize: 10}} // 左侧行数的样式
-            style={them.dark}  // 主题风格
-            language={language}  // 需要语言类型 如css, jsx , javascript 等
-            PreTag='div'
-        >
-            {String(textContent).replace(/\n$/, '')}
-        </SyntaxHighlighter>
+        <div className={style.highlighterBox}>
+            <Alert className={style.copy} onClick={() => copyText(textContent)}/>
+            <SyntaxHighlighter
+                showLineNumbers={true} // 是否展示左侧行数
+                lineNumberStyle={{color: '#ddd', fontSize: 10}} // 左侧行数的样式
+                style={them.dark}  // 主题风格
+                language={language}  // 需要语言类型 如css, jsx , javascript 等
+                PreTag='div'
+            >
+                {String(textContent).replace(/\n$/, '')}
+
+            </SyntaxHighlighter>
+        </div>
+
     );
 };
 
