@@ -17,7 +17,7 @@ import {
     coldarkDark
 } from 'react-syntax-highlighter/dist/esm/styles/prism';// 代码高亮主题风格
 const them = {
-    dark: duotoneDark,
+    dark: solarizedDarkAtom,
 };
 import {copyText} from "../../utils/index.ts";
 import {Alert} from "@/ayongUI/index.ts";

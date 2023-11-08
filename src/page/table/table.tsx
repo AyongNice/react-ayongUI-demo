@@ -1,7 +1,12 @@
-import React from "react";
+import React, {useState} from "react";
 import {Table} from "../../ayongUI/index.ts";
 import './index.less'
+import ConditionalRender from "../../components/conditional-render/conditional-render.tsx";
+import OmsSyntaxHighlight from "../../components/oms-syntax-high-light/oms-syntax-high-light.tsx";
+import codeDemo from "./code-demo.ts";
+import TitleCom from "../../components/title-com/title-com.tsx";
 
+console.log(codeDemo)
 const Column = Table.Column;
 
 const data = [
@@ -46,27 +51,50 @@ const columns = [
 ];
 
 function TablePage() {
+    const [unfold, setUnfold] = useState(true);
+
+    /** 展开/折叠示例 **/
+    const onUnfold = () => {
+        setUnfold(!unfold)
+    }
     return (
         <div>
-            <h1>Table Example</h1>
-            <Table className='diy-table' columns={columns} data={data}/>
+            <TitleCom title='button' onUnfold={onUnfold}/>
+            <fieldset>
+                <legend>指定 data 和 columns数据基本写法</legend>
+                <Table className='diy-table' columns={columns} data={data}/>
 
-            <Table data={data}>
-                <Column title="Age" dataIndex="age" key={1}/>
-                <Column title="Address" dataIndex="address" key={2}/>
-                <Column
-                    key={3}
-                    title="Tags"
-                    dataIndex="tags"
-                    render={(tags: string[]) => (
-                        <>
-                            {tags.map((tag: string) => (
-                                <span style={{color: 'blue'}} key={tag}>{tag}</span>
-                            ))}
-                        </>
-                    )}
-                />
-            </Table>
+                <ConditionalRender show={unfold}>
+                    <OmsSyntaxHighlight textContent={codeDemo.essential}/>
+                </ConditionalRender>
+
+            </fieldset>
+
+            <fieldset>
+                <legend>JSX风格写法</legend>
+                <Table data={data}>
+                    <Column title="Age" dataIndex="age" key={1}/>
+                    <Column title="Address" dataIndex="address" key={2}/>
+                    <Column
+                        key={3}
+                        title="Tags"
+                        dataIndex="tags"
+                        render={(tags: string[]) => (
+                            <>
+                                {tags.map((tag: string) => (
+                                    <span style={{color: 'blue'}} key={tag}>{tag}</span>
+                                ))}
+                            </>
+                        )}
+                    />
+                </Table>
+
+                <ConditionalRender show={unfold}>
+                    <OmsSyntaxHighlight textContent={codeDemo.jsxType}/>
+                </ConditionalRender>
+
+            </fieldset>
+
         </div>
     );
 }
