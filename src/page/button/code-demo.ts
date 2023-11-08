@@ -2,7 +2,7 @@ import {useDebounce} from "../../ayongUI/utils";
 
 const typeSetingcodeConut = `
 import React from 'react';
-import { Button, Flex } from 'ayongUI';
+import { Button} from 'ayongUI';
 const App = () => (
               <fieldset>
                 <Button>默认类型</Button>
@@ -17,7 +17,7 @@ export default App;`
 
 const shapeSetingcodeConut = `
 import React from 'react';
-import { Button, Flex } from 'ayongUI';
+import { Button } from 'ayongUI';
 const App = () => (
               <fieldset>
                 <legend>shape 形状 设置</legend>
@@ -31,7 +31,7 @@ export default App;`
 
 const sizeSetingcodeConut = `
 import React from 'react';
-import { Button, Flex } from 'ayongUI';
+import { Button} from 'ayongUI';
 const App = () => (
                <fieldset>
                 <legend>大小 size 设置</legend>
@@ -56,7 +56,7 @@ export default App;`
 
 const debounceSetingcodeConut = `
 import React from 'react';
-import { Button, Flex } from 'ayongUI';
+import { Button } from 'ayongUI';
 const App = () => (
              <fieldset>
                 <legend>设置防抖 1000毫秒</legend>
