@@ -3,6 +3,7 @@ import { Alipay, Alert, PreviousStep } from "@/ayongUI/index.ts";
 
 import Tab from "./components/tab.tsx";
 import React from "react";
+import { copyText } from "@/utils/index.ts";
 
 const Icon = () => {
   const iconCmps = [
@@ -21,27 +22,19 @@ const Icon = () => {
   ];
 
   const iconClick = (name: string) => {
-    const textarea = document.createElement("textarea");
-    textarea.value = `<${name}/>`;
-    document.body.appendChild(textarea);
-    textarea.select();
-    document.execCommand("copy");
-    document.body.removeChild(textarea);
+    copyText(`<${name}/>`);
   };
-
   let tabData = [
     {
-      title: "样式一",
+      title: "线框风格",
       content: (
-        <div>
+        <div className="icons">
           {iconCmps.map((item, index) => {
             return (
-              <div
-                className="icon-item"
-                key={index}
-                onClick={() => iconClick(item.name)}
-              >
-                {React.createElement(item.cmp)}
+              <div className="icon-border" key={index}>
+                <div className="icon-item" onClick={() => iconClick(item.name)}>
+                  {React.createElement(item.cmp)}
+                </div>
               </div>
             );
           })}
@@ -49,11 +42,11 @@ const Icon = () => {
       ),
     },
     {
-      title: "样式二",
+      title: "实底风格",
       content: <div>111</div>,
     },
     {
-      title: "样式三",
+      title: "双色风格",
       content: <div>111</div>,
     },
   ];
