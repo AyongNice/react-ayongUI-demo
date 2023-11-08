@@ -7,7 +7,10 @@ import MenuList from "./page/menu-list/menu-list.tsx";
 import ButtonPage from "./page/button/button.tsx";
 import Table from "./page/table/table.tsx";
 import Icon from "./page/icon/icon.tsx";
+import SwitchPage from "./page/switch/switch.tsx";
+
 import {Button} from './ayongUI/index.ts'
+
 import globle from "./config/index.ts";
 
 const {THEME} = globle;
@@ -42,6 +45,7 @@ function App() {
                     <Route path="/menu/button" element={<ButtonPage/>}/>
                     <Route path="/menu/table" element={<Table/>}/>
                     <Route path="/menu/icon" element={<Icon/>}/>
+                    <Route path="/menu/switch" element={<SwitchPage/>}/>
                 </Route>
             </Routes>
 

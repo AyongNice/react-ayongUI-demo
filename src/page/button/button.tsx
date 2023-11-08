@@ -1,8 +1,7 @@
 import React, {useEffect, useState} from "react";
-import {Button, Table} from "../../ayongUI/index.ts";
+import {Button, Table} from "@/ayongUI/index.ts";
 import './index.less'
 import OmsSyntaxHighlight from "../../components/oms-syntax-high-light/oms-syntax-high-light.tsx";
-import {marked} from 'marked';
 import TitleCom from "../../components/title-com/title-com.tsx";
 import codeDemo from "./code-demo.ts";
 import ConditionalRender from "../../components/conditional-render/conditional-render.tsx";
@@ -16,12 +15,10 @@ const ButtonPage = () => {
         window.addEventListener('theme', (e) => {
             setTheme(e.detail.theme)
         });
-
         // 读取Markdown文件的内容
         fetch('/public/button.md') // 可以使用相对路径或完整URL
             .then((response) => response.text())
             .then((data) => {
-                setHtml(marked(data))
             })
             .catch((error) => console.error(error));
     }, [theme])
