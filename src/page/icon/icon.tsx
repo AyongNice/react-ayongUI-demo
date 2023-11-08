@@ -1,5 +1,5 @@
 import "./index.less";
-import { Alipay, Alert, PreviousStep } from "../../ayongUI/index.ts";
+import { Alipay, Alert, PreviousStep } from "@/ayongUI/index.ts";
 
 import Tab from "./components/tab.tsx";
 import React from "react";
