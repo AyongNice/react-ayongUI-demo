@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {Button, Table} from "@/ayongUI/dist/AyongUI.es.js";
+import {Button, Table} from "@/ayongUI/dist/index.js";
 
 import './index.less'
 import OmsSyntaxHighlight from "../../components/oms-syntax-high-light/oms-syntax-high-light.tsx";
@@ -38,7 +38,7 @@ const ButtonPage = () => {
 
             <fieldset>
                 <legend>type 类型 设置</legend>
-                <Button  >默认类型</Button>
+                <Button>默认类型</Button>
                 <Button type="dashed">dashed-虚线按钮</Button>
                 <Button type="primary">primary-主题按钮</Button>
                 <Button type="dangerous">dangerous-危险按钮</Button>
