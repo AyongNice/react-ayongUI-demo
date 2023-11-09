@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
-import {Button, Table} from "@/ayongUI/index.ts";
+import {Button, Table} from "@/ayongUI";
+
 import './index.less'
 import OmsSyntaxHighlight from "../../components/oms-syntax-high-light/oms-syntax-high-light.tsx";
 import TitleCom from "../../components/title-com/title-com.tsx";
@@ -9,7 +10,7 @@ import globle from "@/config/index.ts";
 
 const ButtonPage = () => {
     const [theme, setTheme] = useState<string>('var(--light-a-color)')
-    const [unfold, setUnfold] = useState(true);
+    const [unfold, setUnfold] = useState<boolean>(true);
 
     useEffect(() => {
         window.addEventListener('theme', (e) => {
@@ -22,12 +23,12 @@ const ButtonPage = () => {
             })
             .catch((error) => console.error(error));
     }, [theme])
-    const onClick = () => {
+    const onClick = (): void => {
     }
 
 
     /** 展开/折叠示例 **/
-    const onUnfold = () => {
+    const onUnfold = (): void => {
         setUnfold(!unfold)
     }
 
