@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {Button, Table} from "@/ayongUI/dist/index.js";
+import {Button, Table} from "@/ayongUI/index.ts";
 
 import './index.less'
 import OmsSyntaxHighlight from "../../components/oms-syntax-high-light/oms-syntax-high-light.tsx";
