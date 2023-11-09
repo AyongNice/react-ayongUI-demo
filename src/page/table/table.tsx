@@ -6,7 +6,6 @@ import OmsSyntaxHighlight from "../../components/oms-syntax-high-light/oms-synta
 import codeDemo from "./code-demo.ts";
 import TitleCom from "../../components/title-com/title-com.tsx";
 
-console.log(codeDemo)
 const Column = Table.Column;
 
 const data = [
