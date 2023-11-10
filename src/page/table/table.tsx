@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import {useState} from "react";
 import {Table} from "../../ayongUI/index.ts";
 import './index.less'
 import ConditionalRender from "../../components/conditional-render/conditional-render.tsx";
@@ -7,11 +7,14 @@ import codeDemo from "./code-demo.ts";
 import TitleCom from "../../components/title-com/title-com.tsx";
 
 const Column = Table.Column;
+const ColumnGroup = Table.ColumnGroup;
 
 const data = [
     {
         key: '1',
         age: 32,
+        firstName: 'John',
+        lastName: 'Brown',
         name: 'John Brown',
         address: 'New York No. 1 Lake Park',
         tags: ['nice', 'developer'],
@@ -19,6 +22,8 @@ const data = [
     {
         key: '2',
         age: 42,
+        firstName: 'Jim',
+        lastName: 'Green',
         name: 'Jim Green',
         address: 'London No. 1 Lake Park',
         tags: ['loser'],
@@ -26,6 +31,8 @@ const data = [
     {
         key: '3',
         age: 32,
+        firstName: 'Joe',
+        lastName: 'Black',
         name: 'Joe Black',
         address: 'Sydney No. 1 Lake Park',
         tags: ['cool', 'teacher'],
@@ -93,7 +100,43 @@ function TablePage() {
                 </ConditionalRender>
 
             </fieldset>
+            <fieldset>
+                <legend>可拖拽表格</legend>
+                <Table className='diy-table' draggable columns={columns} data={data}/>
 
+                <ConditionalRender show={unfold}>
+                    <OmsSyntaxHighlight textContent={codeDemo.essential}/>
+                </ConditionalRender>
+
+            </fieldset>
+            <fieldset>
+                <legend>表头分组</legend>
+                <Table data={data}>
+                    <ColumnGroup title="Name5">
+                        <Column title="First Name" dataIndex="firstName" key={10}/>
+                        <Column title="Last Name" dataIndex="lastName" key={11}/>
+                    </ColumnGroup>
+                    <Column title="Age" dataIndex="age" key={1}/>
+                    <Column title="Address" dataIndex="address" key={200}/>
+                    <Column
+                        key={3}
+                        title="Tags"
+                        dataIndex="tags"
+                        render={(tags: string[]) => (
+                            <>
+                                {tags.map((tag: string) => (
+                                    <span style={{color: 'blue'}} key={tag}>{tag}</span>
+                                ))}
+                            </>
+                        )}
+                    />
+                </Table>
+
+                <ConditionalRender show={unfold}>
+                    <OmsSyntaxHighlight textContent={codeDemo.essential}/>
+                </ConditionalRender>
+
+            </fieldset>
         </div>
     );
 }
