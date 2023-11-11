@@ -11,16 +11,21 @@
     height: 100px;
     border-radius: 6px;
     cursor: pointer;
+    border: 1px solid #aeaeae;
+
     .icon-item {
-      width: 48px;
-      height: 48px;
+      width: 35px;
+      height: 35px;
+
+      &:hover {
+        background-color: #cfcdcd;
+        transform: scale(1.5);
+        transition: all 0.3s;
+
+      }
     }
 
-    &:hover {
-      background-color: #cfcdcd;
-      width: 120px;
-      height: 120px;
-      transition: all 0.3s;
-    }
+
   }
 }
+

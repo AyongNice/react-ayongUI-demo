@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 import {Button, Table} from "@/ayongUI/index.ts";
 
 
@@ -7,7 +7,7 @@ import OmsSyntaxHighlight from "../../components/oms-syntax-high-light/oms-synta
 import TitleCom from "../../components/title-com/title-com.tsx";
 import codeDemo from "./code-demo.ts";
 import ConditionalRender from "../../components/conditional-render/conditional-render.tsx";
-import globle from "@/config/index.ts";
+import global from "@/config/index.ts";
 
 const ButtonPage = () => {
     const [theme, setTheme] = useState<string>('var(--light-a-color)')
@@ -40,7 +40,7 @@ const ButtonPage = () => {
             <fieldset>
                 <legend>type 类型 设置</legend>
                 <Button>默认类型</Button>
-                <Button  type="dashed">dashed-虚线按钮</Button>
+                <Button type="dashed">dashed-虚线按钮</Button>
                 <Button type="primary">primary-主题按钮</Button>
                 <Button type="dangerous">dangerous-危险按钮</Button>
                 <Button type="warn">warn-警告按钮</Button>
@@ -53,6 +53,7 @@ const ButtonPage = () => {
 
             <fieldset>
                 <legend>shape 形状 设置</legend>
+                <Button>默认-按钮</Button>
                 <Button shape='strong'>直角-按钮</Button>
                 <Button shape='round'>round-椭圆钮</Button>
                 <Button type="primary" href='https://github.com/AyongNice/ayongUI'>href-跳转按钮</Button>
@@ -82,7 +83,7 @@ const ButtonPage = () => {
             </fieldset>
 
             <h2>Porps 介绍</h2>
-            <Table className='diy-table' columns={globle.columns} data={codeDemo.data}/>
+            <Table className='diy-table' columns={global.columns} data={codeDemo.data}/>
         </div>
     )
 }
