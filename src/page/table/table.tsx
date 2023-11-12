@@ -1,4 +1,4 @@
-import React, {useState, Context} from "react";
+import React, {useState, Context, useEffect} from "react";
 import {Table} from "../../ayongUI/index.ts";
 import './index.less'
 import ConditionalRender from "../../components/conditional-render/conditional-render.tsx";
@@ -9,6 +9,8 @@ import * as Icons from '@ant-design/icons';
 
 const Column = Table.Column;
 const ColumnGroup = Table.ColumnGroup;
+
+
 
 const data = [
     {
@@ -59,6 +61,9 @@ const columns = [
 
 function TablePage() {
     const [unfold, setUnfold] = useState(false);
+useEffect(() => {
+
+},[])
 
     /** 展开/折叠示例 **/
     const onUnfold = () => {
@@ -117,7 +122,7 @@ function TablePage() {
                        expandable={{
                            expandedRowRender: record => <p style={{margin: 0}}>1231</p>,
                            onExpand: record => record.name !== 'Not Expandable',
-                           expandedRowKeys: ['1']
+                           expandedRowKeys: ['1','2']
                        }}
                 >
                     <Column title="First Name" dataIndex="firstName" key={10}/>

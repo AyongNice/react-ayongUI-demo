@@ -1,6 +1,7 @@
-import {useEffect, useState} from "react";
+import {useContext, useEffect, useState} from "react";
 import {Button, Table} from "@/ayongUI/index.ts";
 
+import {context} from '../../reducer'
 
 import './index.less'
 import OmsSyntaxHighlight from "../../components/oms-syntax-high-light/oms-syntax-high-light.tsx";
@@ -8,22 +9,25 @@ import TitleCom from "../../components/title-com/title-com.tsx";
 import codeDemo from "./code-demo.ts";
 import ConditionalRender from "../../components/conditional-render/conditional-render.tsx";
 import global from "@/config/index.ts";
+import {useGlobalState} from '../../data-store/index.ts'
 
 const ButtonPage = () => {
     const [theme, setTheme] = useState<string>('var(--light-a-color)')
     const [unfold, setUnfold] = useState<boolean>(true);
+    const [count, setCount] = useGlobalState('count');
 
+    let [state] = useState(context)
+    console.log(context)
     useEffect(() => {
         window.addEventListener('theme', (e) => {
             setTheme(e.detail.theme)
         });
-        // 读取Markdown文件的内容
-        fetch('/public/button.md') // 可以使用相对路径或完整URL
-            .then((response) => response.text())
-            .then((data) => {
-            })
-            .catch((error) => console.error(error));
+
     }, [theme])
+
+    useEffect(() => {
+
+    }, [])
     const onClick = (): void => {
     }
 
@@ -36,8 +40,8 @@ const ButtonPage = () => {
     return (
         <div>
             <TitleCom title='button' onUnfold={onUnfold}/>
-
             <fieldset>
+                {count}
                 <legend>type 类型 设置</legend>
                 <Button>默认类型</Button>
                 <Button type="dashed">dashed-虚线按钮</Button>

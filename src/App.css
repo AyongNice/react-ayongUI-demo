@@ -16,6 +16,7 @@
     box-sizing: border-box;
     color: var(--night-text-color);
     background: var(--light-background-color);
+    transition: all 1s;
 }
 
 .light {
@@ -23,7 +24,7 @@
     box-sizing: border-box;
     color: var(--light-text-color);
     background: var(--night-background-color);
-
+    transition: all .5s;
 }
 
 fieldset {
