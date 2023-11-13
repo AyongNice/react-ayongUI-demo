@@ -11,19 +11,19 @@
     margin: 0;
 }
 
-.night {
-    padding: 15px;
-    box-sizing: border-box;
-    color: var(--night-text-color);
-    background: var(--light-background-color);
-    transition: all 1s;
-}
-
 .light {
     padding: 15px;
     box-sizing: border-box;
-    color: var(--light-text-color);
-    background: var(--night-background-color);
+    color: var(--night-text-color) !important;
+    background: var(--light-background-color) !important;
+    transition: all 1s;
+}
+
+.night {
+    padding: 15px;
+    box-sizing: border-box;
+    color: var(--light-text-color) !important;
+    background: var(--night-background-color) !important;
     transition: all .5s;
 }
 

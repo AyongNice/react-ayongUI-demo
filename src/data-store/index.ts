@@ -2,16 +2,7 @@ import {useState, useEffect} from 'react';
 import globle from "../config/index.ts";
 
 const {THEME} = globle;
-console.log(globle)
 
-export const useTheme = () => {
-    const [theme, setTheme] = useState<string | null>(localStorage.getItem("theme"));
-    useEffect(() => {
-        localStorage.setItem('theme', theme as string);
-    }, [theme]);
-    return [theme, setTheme]
-
-};
 // 创建一个全局状态对象
 const globalState: { callbacks: string[] } = new Proxy({
         callbacks: [],

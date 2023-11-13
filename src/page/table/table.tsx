@@ -64,7 +64,8 @@ function TablePage() {
     useEffect(() => {
 
     }, [])
-    const [count, setCount] = useGlobalState('count');
+    const [theme, setTheme] = useGlobalState('theme');
+
     /** 展开/折叠示例 **/
     const onUnfold = () => {
         setUnfold(!unfold)
@@ -73,7 +74,6 @@ function TablePage() {
     return (
         <div>
             <TitleCom title='Table' onUnfold={onUnfold}/>
-            {count}
             <fieldset>
                 <legend>指定 data 和 columns数据基本写法</legend>
                 <Table className='diy-table' columns={columns} data={data}/>

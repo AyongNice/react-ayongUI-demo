@@ -20,7 +20,7 @@ const them = {
     dark: solarizedDarkAtom,
 };
 import {copyText} from "../../utils/index.ts";
-import {Alert} from "@/ayongUI/index.ts";
+import {FileCopy} from "@/ayongUI/index.ts";
 import style from './index.module.less'
 
 interface OmsSyntax {
@@ -40,7 +40,7 @@ const OmsSyntaxHighlight = ({
     if (!textContent) return
     return (
         <div className={style.highlighterBox}>
-            <Alert className={style.copy} onClick={() => copyText(textContent)}/>
+            <FileCopy className={style.copy} onClick={() => copyText(textContent)}/>
             <SyntaxHighlighter
                 showLineNumbers={true} // 是否展示左侧行数
                 lineNumberStyle={{color: '#ddd', fontSize: 10}} // 左侧行数的样式

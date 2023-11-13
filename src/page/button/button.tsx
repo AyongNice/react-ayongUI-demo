@@ -12,6 +12,7 @@ import {useGlobalState} from '../../data-store/index.ts'
 
 const ButtonPage = () => {
     const [unfold, setUnfold] = useState<boolean>(true);
+    const [theme, setTheme] = useGlobalState('theme');
 
     const onClick = (): void => {
     }
@@ -71,7 +72,7 @@ const ButtonPage = () => {
             </fieldset>
 
             <h2>Porps 介绍</h2>
-            <Table className='diy-table' columns={global.columns} data={codeDemo.data}/>
+            <Table theadClassNmae={theme} columns={global.columns} data={codeDemo.data}/>
         </div>
     )
 }

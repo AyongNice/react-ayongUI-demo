@@ -11,9 +11,6 @@ import SwitchPage from "./page/switch/switch.tsx";
 
 import {Button} from './ayongUI/index.ts'
 
-
-import {initState, countReducer} from './reducer/index'
-
 import {useGlobalState} from './data-store/index.ts'
 
 function App() {
