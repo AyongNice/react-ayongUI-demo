@@ -9,7 +9,7 @@ import * as Icons from '@ant-design/icons';
 
 const Column = Table.Column;
 const ColumnGroup = Table.ColumnGroup;
-
+import {useGlobalState} from '../../data-store/index.ts'
 
 
 const data = [
@@ -61,10 +61,10 @@ const columns = [
 
 function TablePage() {
     const [unfold, setUnfold] = useState(false);
-useEffect(() => {
+    useEffect(() => {
 
-},[])
-
+    }, [])
+    const [count, setCount] = useGlobalState('count');
     /** 展开/折叠示例 **/
     const onUnfold = () => {
         setUnfold(!unfold)
@@ -73,6 +73,7 @@ useEffect(() => {
     return (
         <div>
             <TitleCom title='Table' onUnfold={onUnfold}/>
+            {count}
             <fieldset>
                 <legend>指定 data 和 columns数据基本写法</legend>
                 <Table className='diy-table' columns={columns} data={data}/>
@@ -122,7 +123,7 @@ useEffect(() => {
                        expandable={{
                            expandedRowRender: record => <p style={{margin: 0}}>1231</p>,
                            onExpand: record => record.name !== 'Not Expandable',
-                           expandedRowKeys: ['1','2']
+                           expandedRowKeys: ['1', '2']
                        }}
                 >
                     <Column title="First Name" dataIndex="firstName" key={10}/>

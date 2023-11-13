@@ -1,40 +1,47 @@
 import {useState, useEffect} from 'react';
+import globle from "../config/index.ts";
+
+const {THEME} = globle;
+console.log(globle)
 
 export const useTheme = () => {
-    const [theme, setTheme] = useState(localStorage.getItem("theme"));
+    const [theme, setTheme] = useState<string | null>(localStorage.getItem("theme"));
     useEffect(() => {
-        localStorage.setItem('theme', theme);
+        localStorage.setItem('theme', theme as string);
     }, [theme]);
     return [theme, setTheme]
 
 };
 // 创建一个全局状态对象
-const globalState = new Proxy({callbacks: []}, // Initialize callbacks as an array
+const globalState: { callbacks: string[] } = new Proxy({
+        callbacks: [],
+        theme: localStorage.getItem("theme") || THEME[0]
+    }, // Initialize callbacks as an array
     {
-        set: (target, key, value) => {
+        set: (target: { callback: string[] }, key: string | symbol, value): boolean => {
             target[key] = value;
             // 直接调用回调函数，通知所有订阅者
-            target.callbacks.forEach(callback => callback(key, value));
+            target.callbacks.forEach((callback: Function) => callback(key, value));
             return true;
         },
     });
+console.log(globalState)
 
 // 订阅全局状态的 Hook
 export const useGlobalState = (key) => {
-    const [state, setState] = useState(globalState[key]);
+    const [state, setState] = useState<React.Dispatch<never>>(globalState[key]);
 
     useEffect(() => {
-        debugger
         // 在组件挂载时添加回调函数
-        globalState.callbacks.push((changedKey, changedValue) => {
+        globalState.callbacks.push((changedKey: string, changedValue: string): void => {
             if (changedKey === key) {
-                setState(changedValue);
+                setState(changedValue as string);
             }
         });
 
         // 组件卸载时移除回调函数
         return () => {
-            globalState.callbacks = globalState.callbacks.filter(callback => callback !== setState);
+            globalState.callbacks = globalState.callbacks.filter((callback: string): boolean => callback !== setState);
         };
     }, [key]);
 
