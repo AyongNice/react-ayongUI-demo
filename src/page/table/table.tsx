@@ -12,7 +12,17 @@ const ColumnGroup = Table.ColumnGroup;
 import {useGlobalState} from '../../data-store/index.ts'
 
 
-const data = [
+interface Item {
+    key: string,
+    age: number,
+    firstName: string,
+    lastName: string,
+    name: string,
+    address: string,
+    tags: string[]
+}
+
+const data: Item[] = [
     {
         key: '1',
         age: 32,
@@ -120,11 +130,7 @@ function TablePage() {
             <fieldset>
                 <legend>表头分组</legend>
                 <Table data={data}
-                       expandable={{
-                           expandedRowRender: record => <p style={{margin: 0}}>1231</p>,
-                           onExpand: record => record.name !== 'Not Expandable',
-                           expandedRowKeys: ['1', '2']
-                       }}
+
                 >
                     <Column title="First Name" dataIndex="firstName" key={10}/>
                     <ColumnGroup title="Name">
@@ -146,6 +152,27 @@ function TablePage() {
                         )}
                     />
                 </Table>
+
+                <ConditionalRender show={unfold}>
+                    <OmsSyntaxHighlight textContent={codeDemo.essential}/>
+                </ConditionalRender>
+
+            </fieldset>
+
+            <fieldset>
+                <legend>展开折叠 行</legend>
+                <Table className='diy-table'
+                       test='test'
+                       expandable={{
+                           expandedRowRender: (record: Item) => {
+                               return <p>ayongUI
+                                   为你展示展开折叠行功能</p>
+                           },
+                           onExpand: (e) => {
+                               console.log(11, e)
+                           },
+                           expandedRowKeys: [0,2]
+                       }} columns={columns} data={data}/>
 
                 <ConditionalRender show={unfold}>
                     <OmsSyntaxHighlight textContent={codeDemo.essential}/>
