@@ -1,4 +1,4 @@
-import React, { useState, ThemeContext } from "react";
+import React, { useState, useReducer, useEffect, useContext } from "react";
 import "./App.css";
 import { Routes, Route, Navigate } from "react-router-dom";
 
@@ -12,28 +12,17 @@ import RadioPage from "./page/radio/radio.tsx";
 
 import { Button } from "./ayongUI/index.ts";
 
-import globle from "./config/index.ts";
-
-const { THEME } = globle;
-import { useTheme } from "./data-store/index.ts";
+import { useGlobalState } from "./data-store/index.ts";
 
 function App() {
-  const [theme, setTheme] = useTheme<string>(localStorage.getItem("theme"));
+  const [theme, setTheme] = useGlobalState("theme");
 
   const toggleTheme = (): void => {
-    if (theme === THEME[0]) {
-      setTheme(THEME[1]);
-      window.dispatchEvent(
-        new CustomEvent("theme", { detail: { theme: THEME[1] } })
-      );
-      localStorage.setItem("theme", THEME[1]);
-    } else {
-      setTheme(THEME[0]);
-      window.dispatchEvent(
-        new CustomEvent("theme", { detail: { theme: THEME[0] } })
-      );
-      localStorage.setItem("theme", THEME[0]);
-    }
+    setTheme((previe): string => {
+      const res = previe === "night" ? "light" : "night";
+      window.localStorage.setItem("theme", res);
+      return res;
+    });
   };
 
   return (
@@ -41,7 +30,6 @@ function App() {
       <Button type="primary" onClick={toggleTheme}>
         切换-主题
       </Button>
-
       <Routes>
         {/*重定向*/}
         <Route path="/" element={<Navigate to="/menu/button" />}></Route>
