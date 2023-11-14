@@ -8,6 +8,7 @@ import ButtonPage from "./page/button/button.tsx";
 import Table from "./page/table/table.tsx";
 import Icon from "./page/icon/icon.tsx";
 import SwitchPage from "./page/switch/switch.tsx";
+import RadioPage from "./page/radio/radio.tsx";
 
 import { Button } from "./ayongUI/index.ts";
 
@@ -49,6 +50,7 @@ function App() {
           <Route path="/menu/table" element={<Table />} />
           <Route path="/menu/icon" element={<Icon />} />
           <Route path="/menu/switch" element={<SwitchPage />} />
+          <Route path="/menu/radio" element={<RadioPage />} />
         </Route>
       </Routes>
     </div>
