@@ -78,7 +78,7 @@ const data = [
         tags: ['cool', 'teacher'],
     },
 ];
-const App = () => (
+            const App = () => (
                 <Table data={data}>
                     <Column title="Age" dataIndex="age" key={1}/>
                     <Column title="Address" dataIndex="address" key={2}/>
@@ -95,7 +95,7 @@ const App = () => (
                         )}
                     />
                 </Table>
-);
+             );
 export default App;                
 `
 const data = [

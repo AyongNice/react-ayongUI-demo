@@ -1,13 +1,16 @@
-import {useState} from "react";
+import React, {useState, Context, useEffect} from "react";
 import {Table} from "../../ayongUI/index.ts";
 import './index.less'
 import ConditionalRender from "../../components/conditional-render/conditional-render.tsx";
 import OmsSyntaxHighlight from "../../components/oms-syntax-high-light/oms-syntax-high-light.tsx";
 import codeDemo from "./code-demo.ts";
 import TitleCom from "../../components/title-com/title-com.tsx";
+import * as Icons from '@ant-design/icons';
 
 const Column = Table.Column;
 const ColumnGroup = Table.ColumnGroup;
+import {useGlobalState} from '../../data-store/index.ts'
+
 
 const data = [
     {
@@ -57,15 +60,20 @@ const columns = [
 ];
 
 function TablePage() {
-    const [unfold, setUnfold] = useState(true);
+    const [unfold, setUnfold] = useState(false);
+    useEffect(() => {
+
+    }, [])
+    const [theme, setTheme] = useGlobalState('theme');
 
     /** 展开/折叠示例 **/
     const onUnfold = () => {
         setUnfold(!unfold)
     }
+
     return (
         <div>
-            <TitleCom title='button' onUnfold={onUnfold}/>
+            <TitleCom title='Table' onUnfold={onUnfold}/>
             <fieldset>
                 <legend>指定 data 和 columns数据基本写法</legend>
                 <Table className='diy-table' columns={columns} data={data}/>
@@ -111,12 +119,19 @@ function TablePage() {
             </fieldset>
             <fieldset>
                 <legend>表头分组</legend>
-                <Table data={data}>
-                    <ColumnGroup title="Name5">
-                        <Column title="First Name" dataIndex="firstName" key={10}/>
+                <Table data={data}
+                       expandable={{
+                           expandedRowRender: record => <p style={{margin: 0}}>1231</p>,
+                           onExpand: record => record.name !== 'Not Expandable',
+                           expandedRowKeys: ['1', '2']
+                       }}
+                >
+                    <Column title="First Name" dataIndex="firstName" key={10}/>
+                    <ColumnGroup title="Name">
                         <Column title="Last Name" dataIndex="lastName" key={11}/>
+                        <Column title="Age" dataIndex="age" key={1}/>
+
                     </ColumnGroup>
-                    <Column title="Age" dataIndex="age" key={1}/>
                     <Column title="Address" dataIndex="address" key={200}/>
                     <Column
                         key={3}
