@@ -1,6 +1,8 @@
 import "./index.less";
-import {Alipay, Alert, PreviousStep, FileCopy, CodeDisplay, LabelersLists, UserHollow,
-    EyesOpen,EyesClosed,Setup,Collapse,Unfold
+import {
+    Alipay, Alert, PreviousStep, FileCopy, CodeDisplay, LabelersLists, UserHollow,
+    EyesOpen, EyesClosed, Setup, Collapse, Unfold, Alertfull, Advance, Wechatfull,
+    Fileput, Download, Upload,Wechat
 } from "@/ayongUI/index.ts";
 
 import Tab from "./components/tab.tsx";
@@ -20,6 +22,9 @@ const Icon = () => {
         {
             cmp: PreviousStep,
             name: "PreviousStep",
+        },   {
+            cmp: Advance,
+            name: "Advance",
         },
         {
             cmp: FileCopy,
@@ -57,8 +62,33 @@ const Icon = () => {
             cmp: Setup,
             name: "Setup",
         },
+        {
+            cmp: Fileput,
+            name: "Fileput",
+        },
+        {
+            cmp: Download,
+            name: "Download",
+        },
+        {
+            cmp: Upload,
+            name: "Upload",
+        },
+        {
+            cmp: Wechat,
+            name: "Wechat",
+        },
     ];
-
+    const solidicon=[
+        {
+            cmp: Alertfull,
+            name: "Alertfull",
+        },
+        {
+            cmp: Wechatfull,
+            name: "Wechatfull",
+        },
+    ]
     const iconClick = (name: string) => {
         copyText(`<${name}/>`);
     };
@@ -81,7 +111,17 @@ const Icon = () => {
         },
         {
             title: "实底风格",
-            content: <div>111</div>,
+            content: <div className='solidicon'>
+                {solidicon.map((item, index) => {
+                    return (
+                        <div className="solidicon-border" key={index}>
+                            <div className="solidicon-item" onClick={() => iconClick(item.name)}>
+                                {React.createElement(item.cmp)}
+                            </div>
+                        </div>
+                    );
+                })}
+            </div>,
         },
         {
             title: "双色风格",

@@ -1,7 +1,7 @@
 .icons {
   display: flex;
   margin-top: 20px;
-
+  flex-wrap: wrap;
   .icon-border {
     display: flex;
     justify-content: center;
@@ -12,6 +12,7 @@
     border-radius: 6px;
     cursor: pointer;
     border: 1px solid #aeaeae;
+    margin-top: 10px;
 
     .icon-item {
       width: 35px;
@@ -21,11 +22,37 @@
         background-color: #cfcdcd;
         transform: scale(1.5);
         transition: all 0.3s;
-
       }
     }
+  }
+}
 
+.solidicon {
+  display: flex;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  .solidicon-border {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    width: 100px;
+    height: 100px;
+    border-radius: 6px;
+    cursor: pointer;
+    border: 1px solid #aeaeae;
+    margin-top: 10px;
 
+    .solidicon-item {
+      width: 35px;
+      height: 35px;
+
+      &:hover {
+        background-color: #cfcdcd;
+        transform: scale(1.5);
+        transition: all 0.3s;
+      }
+    }
   }
 }
 
