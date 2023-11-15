@@ -8,7 +8,6 @@ import {
 import Tab from "./components/tab.tsx";
 import React from "react";
 import {copyText} from "@/utils/index.ts";
-
 const Icon = () => {
     const iconCmps = [
         {
