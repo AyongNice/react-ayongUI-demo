@@ -94,6 +94,7 @@ const Icon = () => {
             name: "Weibofull",
         },
     ]
+    
     const iconClick = (name: string) => {
         copyText(`<${name}/>`);
     };
