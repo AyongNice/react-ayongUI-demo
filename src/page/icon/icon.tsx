@@ -1,8 +1,8 @@
 import "./index.less";
 import {
     Alipay, Alert, PreviousStep, FileCopy, CodeDisplay, LabelersLists, UserHollow,
-    EyesOpen, EyesClosed, Setup, Collapse, Unfold, Alertfull, Advance, Wechatfull,
-    Fileput, Download, Upload,Wechat
+    EyesOpen, EyesClosed, Setup, Collapse, Unfold, Alipayfull, Advance, Wechatfull,
+    Fileput, Download, Upload,Wechat,Weibofull,Weibo
 } from "@/ayongUI/index.ts";
 
 import Tab from "./components/tab.tsx";
@@ -77,16 +77,22 @@ const Icon = () => {
         {
             cmp: Wechat,
             name: "Wechat",
+        }, {
+            cmp: Weibo,
+            name: "Weibo",
         },
     ];
     const solidicon=[
         {
-            cmp: Alertfull,
-            name: "Alertfull",
+            cmp: Alipayfull,
+            name: "Alipayfull",
         },
         {
             cmp: Wechatfull,
             name: "Wechatfull",
+        },{
+            cmp: Weibofull,
+            name: "Weibofull",
         },
     ]
     const iconClick = (name: string) => {
