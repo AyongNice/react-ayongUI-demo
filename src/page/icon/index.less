@@ -2,6 +2,7 @@
   display: flex;
   margin-top: 20px;
   flex-wrap: wrap;
+
   .icon-border {
     display: flex;
     justify-content: center;
@@ -17,13 +18,17 @@
     .icon-item {
       width: 35px;
       height: 35px;
+      text-align: center;
+      line-height: 45px;
 
-      &:hover {
-        background-color: #cfcdcd;
-        transform: scale(1.5);
-        transition: all 0.3s;
-      }
     }
+  }
+}
+
+.icon-border:hover {
+  .icon-item {
+    transform: scale(1.5);
+    transition: all 0.3s;
   }
 }
 
@@ -31,6 +36,7 @@
   display: flex;
   margin-top: 20px;
   flex-wrap: wrap;
+
   .solidicon-border {
     display: flex;
     justify-content: center;

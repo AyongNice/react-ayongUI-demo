@@ -123,7 +123,7 @@ function TablePage() {
                 <Table className='diy-table' draggable columns={columns} data={data}/>
 
                 <ConditionalRender show={unfold}>
-                    <OmsSyntaxHighlight textContent={codeDemo.essential}/>
+                    <OmsSyntaxHighlight textContent={codeDemo.draggable}/>
                 </ConditionalRender>
 
             </fieldset>
@@ -154,7 +154,7 @@ function TablePage() {
                 </Table>
 
                 <ConditionalRender show={unfold}>
-                    <OmsSyntaxHighlight textContent={codeDemo.essential}/>
+                    <OmsSyntaxHighlight textContent={codeDemo.tableGroup}/>
                 </ConditionalRender>
 
             </fieldset>
@@ -171,7 +171,7 @@ function TablePage() {
                            onExpand: (e) => {
                                console.log(11, e)
                            },
-                           expandedRowKeys: [0,2]
+                           expandedRowKeys: [0, 2]
                        }} columns={columns} data={data}/>
 
                 <ConditionalRender show={unfold}>

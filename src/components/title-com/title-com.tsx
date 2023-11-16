@@ -22,7 +22,8 @@ const TitleCom = ({
                 <h1>{title}</h1>
                 <div className={style.toptic} onClick={onUnfold}>
                     展开/折叠代码示例
-                    <CodeDisplay/>
+                    <CodeDisplay style={{marginLeft: '15px'}}/>
+
                 </div>
             </div>
         </>
