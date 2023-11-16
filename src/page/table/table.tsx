@@ -1,11 +1,11 @@
-import React, {useState, Context, useEffect} from "react";
+import React, {useState, useEffect} from "react";
 import {Table} from "../../ayongUI/index.ts";
 import './index.less'
 import ConditionalRender from "../../components/conditional-render/conditional-render.tsx";
 import OmsSyntaxHighlight from "../../components/oms-syntax-high-light/oms-syntax-high-light.tsx";
 import codeDemo from "./code-demo.ts";
 import TitleCom from "../../components/title-com/title-com.tsx";
-import * as Icons from '@ant-design/icons';
+import {MinusCircleOutlined, PlusCircleOutlined} from '@ant-design/icons';
 
 const Column = Table.Column;
 const ColumnGroup = Table.ColumnGroup;
@@ -164,12 +164,20 @@ function TablePage() {
                 <Table className='diy-table'
                        test='test'
                        expandable={{
-                           expandedRowRender: (record: Item) => {
-                               return <p>ayongUI
-                                   为你展示展开折叠行功能</p>
+                           expandedRowRender: () => (<p>ayongUI 为你展示展开折叠行功能</p>),
+                           expandIcon: ({onExpand, record, expanded}: {
+                               record: number,
+                               expanded: boolean,
+                               onExpand: (record: number) => void
+                           }) => {
+                               return (
+                                   <span onClick={() => onExpand(record)}>
+                                        {expanded ? <MinusCircleOutlined/> : <PlusCircleOutlined/>}
+                                  </span>)
+
                            },
-                           onExpand: (e) => {
-                               console.log(11, e)
+                           onExpandChange: (e) => {
+                               console.log(11)
                            },
                            expandedRowKeys: [0, 2]
                        }} columns={columns} data={data}/>
