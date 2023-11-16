@@ -128,11 +128,7 @@ const Icon = () => {
                     );
                 })}
             </div>,
-        },
-        {
-            title: "双色风格",
-            content: <div>111</div>,
-        },
+        }
     ];
     return (
         <div>
