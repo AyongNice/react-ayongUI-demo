@@ -2,10 +2,9 @@ import "./index.less";
 import {
     Alipay, Alert, PreviousStep, FileCopy, CodeDisplay, LabelersLists, UserHollow,
     EyesOpen, EyesClosed, Setup, Collapse, Unfold, Alipayfull, Advance, Wechatfull,
-    Fileput, Download, Upload,Wechat,Weibofull,Weibo,Fulcopy,Taobao,Taobaoful,Android,
-    Androidfu,Google,Googlefu,Plusround,Plusrofu
+    Fileput, Download, Upload, Wechat, Weibofull, Weibo, Fulcopy, Taobao, Taobaoful, Android,
+    Androidfu, Google, Googlefu, Plusround, Plusrofu, Minusround, Minusrfu
 } from "@/ayongUI/index.ts";
-
 import Tab from "./components/tab.tsx";
 import React from "react";
 import {copyText} from "@/utils/index.ts";
@@ -98,6 +97,10 @@ const Icon = () => {
             cmp: Plusround,
             name: "Plusround",
         },
+        {
+            cmp: Minusround,
+            name: "Minusround",
+        },
     ];
     const solidicon=[
         {
@@ -131,6 +134,10 @@ const Icon = () => {
         {
             cmp: Plusrofu,
             name: "Plusrofu",
+        },
+        {
+            cmp: Minusrfu,
+            name: "Minusrfu",
         },
     ]
     
