@@ -11,6 +11,7 @@ const Column = Table.Column;
 const ColumnGroup = Table.ColumnGroup;
 import {useGlobalState} from '../../data-store/index.ts'
 
+import type {DataItem} from "@/ayongUI";
 
 interface Item {
     key: string,
@@ -164,6 +165,24 @@ function TablePage() {
                 <Table className='diy-table'
                        test='test'
                        expandable={{
+                           expandedRowRender: (record: Item) => (<p>{record.name} 为你展示展开折叠行功能</p>),
+                           onExpandChange: (index: number, state: boolean) => {
+                               console.log(`点击了折叠按钮---当前第${index + 1}按钮状态`, state)
+                           },
+                           expandedRowKeys: [0, 2]
+                       }} columns={columns} data={data}/>
+
+                <ConditionalRender show={unfold}>
+                    <OmsSyntaxHighlight textContent={codeDemo.unfold}/>
+                </ConditionalRender>
+
+            </fieldset>
+
+            <fieldset>
+                <legend>自定义 展开/折叠按钮</legend>
+                <Table className='diy-table'
+                       test='test'
+                       expandable={{
                            expandedRowRender: (record) => (<p>{record.name} 为你展示展开折叠行功能</p>),
                            expandIcon: ({onExpand, record, expanded}: {
                                record: number,
@@ -176,14 +195,11 @@ function TablePage() {
                                   </span>)
 
                            },
-                           onExpandChange: (e) => {
-                               console.log(11)
-                           },
                            expandedRowKeys: [0, 2]
                        }} columns={columns} data={data}/>
 
                 <ConditionalRender show={unfold}>
-                    <OmsSyntaxHighlight textContent={codeDemo.essential}/>
+                    <OmsSyntaxHighlight textContent={codeDemo.diyUnfold}/>
                 </ConditionalRender>
 
             </fieldset>

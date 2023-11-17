@@ -246,6 +246,114 @@ const App = () =>(
 )
 export default App; 
 `
+
+const unfold: string = `
+import React from 'react';
+import { Table} from 'ayongUI';
+const Column = Table.Column;
+const data = [
+    {
+        key: '1',
+        age: 32,
+        name: 'John Brown',
+        address: 'New York No. 1 Lake Park',
+        tags: ['nice', 'developer'],
+    },
+    {
+        key: '2',
+        age: 42,
+        name: 'Jim Green',
+        address: 'London No. 1 Lake Park',
+        tags: ['loser'],
+    },
+    {
+        key: '3',
+        age: 32,
+        name: 'Joe Black',
+        address: 'Sydney No. 1 Lake Park',
+        tags: ['cool', 'teacher'],
+    },
+];
+const App = () =>(
+     <fieldset>
+             <legend>展开折叠 行</legend>
+             <Table className='diy-table'
+                    test='test'
+                    expandable={{
+                       expandedRowRender: (record: Item) => (<p>{record.name} 为你展示展开折叠行功能</p>),
+                        onExpandChange: (index: number, state: boolean) => {
+                          console.log(\点击了折叠按钮---当前第\{index + 1}按钮状态\, state)
+                        },
+                        expandedRowKeys: [0, 2]
+                    }} columns={columns} data={data}/>
+
+             <ConditionalRender show={unfold}>
+                 <OmsSyntaxHighlight textContent={codeDemo.essential}/>
+             </ConditionalRender>
+
+     </fieldset>
+)
+export default App; 
+`
+
+
+const diyUnfold: string = `
+import React from 'react';
+import { Table} from 'ayongUI';
+const Column = Table.Column;
+const data = [
+    {
+        key: '1',
+        age: 32,
+        name: 'John Brown',
+        address: 'New York No. 1 Lake Park',
+        tags: ['nice', 'developer'],
+    },
+    {
+        key: '2',
+        age: 42,
+        name: 'Jim Green',
+        address: 'London No. 1 Lake Park',
+        tags: ['loser'],
+    },
+    {
+        key: '3',
+        age: 32,
+        name: 'Joe Black',
+        address: 'Sydney No. 1 Lake Park',
+        tags: ['cool', 'teacher'],
+    },
+];
+const App = () =>(
+   <fieldset>
+           <legend>自定义 展开/折叠按钮</legend>
+           <Table className='diy-table'
+                  test='test'
+                  expandable={{
+                     expandedRowRender: (record) => (<p>{record.name} 为你展示展开折叠行功能</p>),
+                      expandIcon: ({onExpand, record, expanded}: {
+                         record: number,
+                          expanded: boolean,
+                          onExpand: (record: number) => void
+                      }) => {
+                        return (
+                           <span onClick={() => onExpand(record)}>
+                                   {expanded ? <MinusCircleOutlined/> : <PlusCircleOutlined/>}
+                           </span>)
+
+                      },
+                      expandedRowKeys: [0, 2]
+           }} columns={columns} data={data}/>
+
+           <ConditionalRender show={unfold}>
+               <OmsSyntaxHighlight textContent={codeDemo.essential}/>
+           </ConditionalRender>
+
+    </fieldset>
+)
+export default App; 
+`
+
 const data = [
     {
         key: '1',
@@ -297,5 +405,7 @@ export default {
     jsxType,
     tableGroup,
     JSXType,
-    draggable
+    draggable,
+    unfold,
+    diyUnfold
 }
