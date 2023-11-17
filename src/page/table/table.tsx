@@ -164,7 +164,7 @@ function TablePage() {
                 <Table className='diy-table'
                        test='test'
                        expandable={{
-                           expandedRowRender: () => (<p>ayongUI 为你展示展开折叠行功能</p>),
+                           expandedRowRender: (record) => (<p>{record.name} 为你展示展开折叠行功能</p>),
                            expandIcon: ({onExpand, record, expanded}: {
                                record: number,
                                expanded: boolean,
