@@ -53,6 +53,30 @@ npm run dev
 
 1. 组件开发完成 在demo组件内必须写好 md文件使用说明文档 参考ayong-button.md 文档格式
 
+## 测试流程
+### 开发模式
+1. 在开发模式demo页面直接引入引入ayongUI组件路径 快捷开发 例如
+
+```js
+import {Button, Table} from "@/ayongUI/index.ts";
+//测试组件
+```
+### 测试模式
+2. 开发完成需要在 ayongUI 文件打开终端 执行 npm run build 命令 生成 dist打包产物
+3. 然后将打包产物整个 dist目录 复制到 demo项目中的 node_modules下(用于模拟组件库真实场景) 
+4. 然后替换路径为 dist (为了方便调试 不更换名字,组件库上线后名字是 ayongUI)
+
+
+```js
+//demo页面
+import {Button, Table} from "dist";
+```
+5. 在demo的main.ts文件引入样式文件
+```ts
+//mian.ts
+import 'dist/style.css'
+
+```
 ## git提交规范
 
 1. !⚠️ 必须先提交 ayongUI组件库仓库 然后在提交demo仓库 切记顺序不可乱!⚠️
