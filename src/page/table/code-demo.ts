@@ -286,11 +286,6 @@ const App = () =>(
                         },
                         expandedRowKeys: [0, 2]
                     }} columns={columns} data={data}/>
-
-             <ConditionalRender show={unfold}>
-                 <OmsSyntaxHighlight textContent={codeDemo.essential}/>
-             </ConditionalRender>
-
      </fieldset>
 )
 export default App; 
@@ -344,14 +339,55 @@ const App = () =>(
                       },
                       expandedRowKeys: [0, 2]
            }} columns={columns} data={data}/>
-
-           <ConditionalRender show={unfold}>
-               <OmsSyntaxHighlight textContent={codeDemo.essential}/>
-           </ConditionalRender>
-
     </fieldset>
 )
 export default App; 
+`
+
+const cellActiveClassName = `
+import React from 'react';
+import { Table} from 'ayongUI';
+const Column = Table.Column;
+const data = [
+    {
+        key: '1',
+        age: 32,
+        name: 'John Brown',
+        address: 'New York No. 1 Lake Park',
+        tags: ['nice', 'developer'],
+    },
+    {
+        key: '2',
+        age: 42,
+        name: 'Jim Green',
+        address: 'London No. 1 Lake Park',
+        tags: ['loser'],
+    },
+    {
+        key: '3',
+        age: 32,
+        name: 'Joe Black',
+        address: 'Sydney No. 1 Lake Park',
+        tags: ['cool', 'teacher'],
+    },
+];
+  /** 动态设置 年龄58岁的行样式 **/
+    const cellActiveClassName = (record: Item) => {
+        if (record.age === 58) return 'active'
+    }
+const App = () =>(
+            <fieldset>
+                <legend>动态设置 行样式cellActiveClassName</legend>
+                <Table columns={columns} cellActiveClassName={cellActiveClassName} data={data}/>
+            </fieldset>
+)
+export default App; 
+    
+/** css样式 **/
+ .active {
+    background: #8aabec;
+    color: #fff;
+}
 `
 
 const data = [
@@ -407,5 +443,6 @@ export default {
     JSXType,
     draggable,
     unfold,
-    diyUnfold
+    diyUnfold,
+    cellActiveClassName
 }
