@@ -3,7 +3,8 @@ import {
     Alipay, Alert, PreviousStep, FileCopy, CodeDisplay, LabelersLists, UserHollow,
     EyesOpen, EyesClosed, Setup, Collapse, Unfold, Alipayfull, Advance, Wechatfull,
     Fileput, Download, Upload, Wechat, Weibofull, Weibo, Fulcopy, Taobao, Taobaoful, Android,
-    Androidfu, Google, Googlefu, Plusround, Plusrofu, Minusround, Minusrfu
+    Androidfu, Google, Googlefu, Plusround, Plusrofu, Minusround, Minusrfu, Upward, Upwardfu,
+    Downward, Downwardfu, Downwleft, Downwleftfu, Downwright, Downwrightfu
 } from "@/ayongUI/index.ts";
 import Tab from "./components/tab.tsx";
 import React from "react";
@@ -101,6 +102,22 @@ const Icon = () => {
             cmp: Minusround,
             name: "Minusround",
         },
+        {
+            cmp: Upward,
+            name: "Upward",
+        },
+        {
+            cmp: Downward,
+            name: "Downward",
+        },
+        {
+            cmp: Downwleft,
+            name: "Downwleft",
+        },
+        {
+            cmp: Downwright,
+            name: "Downwright",
+        },
     ];
     const solidicon=[
         {
@@ -138,6 +155,22 @@ const Icon = () => {
         {
             cmp: Minusrfu,
             name: "Minusrfu",
+        },
+        {
+            cmp: Upwardfu,
+            name: "Upwardfu",
+        },
+        {
+            cmp: Downwardfu,
+            name: "Downwardfu",
+        },
+        {
+            cmp: Downwleftfu,
+            name: "Downwleftfu",
+        },
+        {
+            cmp: Downwrightfu,
+            name: "Downwrightfu",
         },
     ]
     
