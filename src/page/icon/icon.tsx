@@ -173,7 +173,6 @@ const Icon = () => {
             name: "Downwrightfu",
         },
     ]
-    
     const iconClick = (name: string) => {
         copyText(`<${name}/>`);
     };
