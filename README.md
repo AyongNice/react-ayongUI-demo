@@ -62,18 +62,15 @@ import {Button, Table} from "@/ayongUI/index.ts";
 //测试组件
 ```
 ### 测试模式
-2. 开发完成需要在 ayongUI 文件打开终端 执行 npm run build 命令 生成 dist打包产物
-3. 然后将打包产物整个 dist目录 复制到 demo项目中的 node_modules下(用于模拟组件库真实场景) 
-4. 然后替换路径为 dist (为了方便调试 不更换名字,组件库上线后名字是 ayongUI)
-
+1. 执行demo中的 test命令   **npm run test**  根据弹窗提示操作
 
 ```js
-//demo页面
+//demo页面路径需要改成 dist
 import {Button, Table} from "dist";
 ```
-5. 在demo的main.ts文件引入样式文件
+
 ```ts
-//mian.ts
+//mian.ts 在demo的main.ts文件引入样式文件
 import 'dist/style.css'
 
 ```

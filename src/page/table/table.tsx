@@ -1,17 +1,21 @@
 import React, {useState, useEffect} from "react";
-import {Table} from "../../ayongUI/index.ts";
+import {Table} from "dist";
+// import {Table} from "@/ayongUI/index.ts";
 import './index.less'
 import ConditionalRender from "../../components/conditional-render/conditional-render.tsx";
 import OmsSyntaxHighlight from "../../components/oms-syntax-high-light/oms-syntax-high-light.tsx";
 import codeDemo from "./code-demo.ts";
 import TitleCom from "../../components/title-com/title-com.tsx";
-import {MinusCircleOutlined, PlusCircleOutlined} from '@ant-design/icons';
-
-const Column = Table.Column;
-const ColumnGroup = Table.ColumnGroup;
 import {useGlobalState} from '../../data-store/index.ts'
 
 import type {DataItem} from "@/ayongUI";
+import {MinusCircleOutlined, PlusCircleOutlined} from "@ant-design/icons";
+
+const Column = Table.Column;
+const ColumnGroup = Table.ColumnGroup;
+
+console.log('Table', Table)
+console.log('ColumnGroup', ColumnGroup)
 
 interface Item {
     key: string,
@@ -119,22 +123,15 @@ function TablePage() {
                 </ConditionalRender>
 
             </fieldset>
-            <fieldset>
-                <legend>可拖拽表格</legend>
-                <Table className='diy-table' draggable columns={columns} data={data}/>
 
-                <ConditionalRender show={unfold}>
-                    <OmsSyntaxHighlight textContent={codeDemo.draggable}/>
-                </ConditionalRender>
-
-            </fieldset>
             <fieldset>
                 <legend>表头分组</legend>
                 <Table data={data}
 
                 >
-                    <Column title="First Name" dataIndex="firstName" key={10}/>
-                    <ColumnGroup title="Name">
+                    <Column  title="First Name" dataIndex="firstName" key={10}/>
+                    <ColumnGroup  title="Name" key={666}>
+
                         <Column title="Last Name" dataIndex="lastName" key={11}/>
                         <Column title="Age" dataIndex="age" key={1}/>
 
@@ -156,6 +153,16 @@ function TablePage() {
 
                 <ConditionalRender show={unfold}>
                     <OmsSyntaxHighlight textContent={codeDemo.tableGroup}/>
+                </ConditionalRender>
+
+            </fieldset>
+
+            <fieldset>
+                <legend>可拖拽表格</legend>
+                <Table className='diy-table' draggable columns={columns} data={data}/>
+
+                <ConditionalRender show={unfold}>
+                    <OmsSyntaxHighlight textContent={codeDemo.draggable}/>
                 </ConditionalRender>
 
             </fieldset>
