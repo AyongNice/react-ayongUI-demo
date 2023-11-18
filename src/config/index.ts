@@ -9,6 +9,7 @@ const MENULIST: Menu[] = [
   { title: "icon组件", path: "/icon", id: +new Date() + "" },
   { title: "switch组件", path: "/switch", id: +new Date() + "" },
   { title: "radio组件", path: "/radio", id: +new Date() + "" },
+  { title: "input组件", path: "/input", id: +new Date() + "" },
 ];
 
 const THEME: string[] = ["night", "light"]; //白天 .晚上主题
