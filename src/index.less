@@ -1,9 +1,85 @@
-:root {
+
+#root {
   /**
    再此处自定义组件主题色配置
    */
-  //--ayong-primary-color: #a9ed0f; /* 全局主题色 */
+  --night-background-color: #181823;
+  --light-background-color: #e8e6e3e0;
+  --light-text-color: #e8e6e3e0;
+  --night-text-color: #242d41;
+  --light-a-color: #50ffd9;
+  --night-a-color: #242d41;
+  --legend-p-color: #181823;
+  --legend-color: #808080;
+}
+
+* {
+  margin: 0;
+}
+
+.light {
+  padding: 15px;
+  box-sizing: border-box;
+  color: var(--night-text-color) !important;
+  background: var(--light-background-color) !important;
+  transition: all 1s;
+}
+
+.night {
+  padding: 15px;
+  box-sizing: border-box;
+  color: var(--light-text-color) !important;
+  background: var(--night-background-color) !important;
+  transition: all .5s;
+}
+
+fieldset {
+  border: 1px solid #565151;
+
+  legend {
+    color: var(--legend-color);
+
+    p {
+      color: var(--legend-p-color);
+    }
+
+    font-weight: bold;
+  }
+
+}
+
+.table-theme-night {
+  tbody {
+    color: #bcbcbc;
+  }
+}
+
+.table-theme-light {
+  //thead {
+  //  color: #bcbcbc;
+  //}
+}
+
+.show {
+  display: block;
 }
 
 
+.hide {
+  display: none;
+}
 
+.table-theme-night {
+  background: #262635;
+
+  tbody {
+    color: #bcbcbc;
+  }
+}
+
+.table-theme-light {
+  background: rgba(244, 244, 241, 0.88);
+
+  tbody {
+  }
+}

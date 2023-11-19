@@ -155,7 +155,13 @@ function TablePage() {
             <TitleCom title='Table' onUnfold={onUnfold}/>
             <fieldset>
                 <legend>指定 data 和 columns数据基本写法</legend>
-                <Table className='diy-table' cellActiveClassName={cellActiveClassName} columns={columns} data={data}/>
+                <Table
+                    data={data}
+                    columns={columns}
+                    className={`table-theme-${theme}`}
+                    cellActiveClassName={cellActiveClassName}
+
+                />
 
                 <ConditionalRender show={unfoldCode('def')}>
                     <OmsSyntaxHighlight textContent={codeDemo.essential}/>
@@ -165,7 +171,7 @@ function TablePage() {
 
             <fieldset>
                 <legend>JSX风格写法</legend>
-                <Table data={data}>
+                <Table data={data} className={`table-theme-${theme}`}>
                     <Column title='Age' dataIndex='age' key={1}/>
                     <Column title='Address' dataIndex='address' key={2}/>
                     <Column
@@ -197,7 +203,7 @@ function TablePage() {
                     defaultSortOrder 非必传字段 为指定 默认排序 升/降序 'ascend' 'descend' 两种形式
                     false 为默认值. 默认不排序
                 </p>
-                <Table className='diy-table' columns={columnsStore} data={data}/>
+                <Table className={`table-theme-${theme}`} columns={columnsStore} data={data}/>
 
                 <ConditionalRender show={unfoldCode('sort')}>
                     <OmsSyntaxHighlight textContent={codeDemo.sotre}/>
@@ -207,7 +213,7 @@ function TablePage() {
             </fieldset>
             <fieldset>
                 <legend>表头分组</legend>
-                <Table data={data}>
+                <Table data={data} className={`table-theme-${theme}`}>
                     <Column title='First Name' dataIndex='firstName' key={10}/>
                     <ColumnGroup title='Name' key={666}>
                         <Column title='Last Name' dataIndex='lastName' key={11}/>
@@ -240,7 +246,11 @@ function TablePage() {
 
             <fieldset>
                 <legend>可拖拽表格</legend>
-                <Table className='diy-table' draggable columns={columns} data={data}/>
+                <Table
+                    data={data}
+                    draggable columns={columns}
+                    className={`table-theme-${theme}`}
+                />
 
                 <ConditionalRender show={unfoldCode('drag')}>
                     <OmsSyntaxHighlight textContent={codeDemo.draggable}/>
@@ -252,8 +262,7 @@ function TablePage() {
             <fieldset>
                 <legend>展开折叠 行</legend>
                 <Table
-                    className='diy-table'
-                    test='test'
+                    className={`table-theme-${theme}`}
                     expandable={{
                         expandedRowRender: (record: Item) => (
                             <p>{record.name} 为你展示展开折叠行功能</p>
@@ -277,8 +286,7 @@ function TablePage() {
             <fieldset>
                 <legend>自定义 展开/折叠按钮</legend>
                 <Table
-                    className='diy-table'
-                    test='test'
+                    className={`table-theme-${theme}`}
                     expandable={{
                         expandedRowRender: (record) => (
                             <p>{record.name} 为你展示展开折叠行功能</p>
@@ -313,16 +321,19 @@ function TablePage() {
 
             <h3>Porps 介绍</h3>
             <Table
+                className={`table-theme-${theme}`}
                 columns={global.columns}
                 data={codeDemo.data}
             />
             <h4>expandable 展开功能参数 介绍</h4>
             <Table
+                className={`table-theme-${theme}`}
                 columns={global.columns}
                 data={codeDemo.expandableData}
             />
             <h4>expandIconProps 自定义展开icon参数 介绍</h4>
             <Table
+                className={`table-theme-${theme}`}
                 columns={global.columns}
                 data={codeDemo.expandIconPropsData}
             />
