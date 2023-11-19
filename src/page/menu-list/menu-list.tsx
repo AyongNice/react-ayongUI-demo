@@ -1,7 +1,6 @@
-import React, {useEffect, useState} from "react";
 import {Link, Navigate, Outlet, Route, Routes} from "react-router-dom";
 import menu from './menu.module.less'
-import '../../App.css'
+import '../../App.less'
 import globle from "../../config/index.ts";
 import {useGlobalState} from "../../data-store";
 

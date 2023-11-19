@@ -1,0 +1,55 @@
+#root {
+  --night-background-color: #101318;
+  --light-background-color: #fafff9;
+  --light-text-color: #e4e4e0;
+  --night-text-color: #242d41;
+  --light-a-color: #50ffd9;
+  --night-a-color: #242d41;
+  --legend-p-color: #00144d;
+  --legend-color: #808080;
+}
+
+* {
+  margin: 0;
+}
+
+.light {
+  padding: 15px;
+  box-sizing: border-box;
+  color: var(--night-text-color) !important;
+  background: var(--light-background-color) !important;
+  transition: all 1s;
+}
+
+.night {
+  padding: 15px;
+  box-sizing: border-box;
+  color: var(--light-text-color) !important;
+  background: var(--night-background-color) !important;
+  transition: all .5s;
+}
+
+fieldset {
+  border: 1px solid #565151;
+
+  legend {
+    color: var(--legend-color);
+
+    p {
+      color: var(--legend-p-color);
+    }
+
+    font-weight: bold;
+  }
+
+}
+
+
+.show {
+  display: block;
+}
+
+
+.hide {
+  display: none;
+}

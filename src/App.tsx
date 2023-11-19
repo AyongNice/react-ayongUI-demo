@@ -1,5 +1,5 @@
 import React, { useState, useReducer, useEffect, useContext } from 'react';
-import './App.css';
+import './App.less';
 import { Routes, Route, Navigate } from 'react-router-dom';
 
 import MenuList from './page/menu-list/menu-list.tsx';

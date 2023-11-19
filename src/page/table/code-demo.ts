@@ -3,6 +3,7 @@ import {Table} from "../../ayongUI";
 import React from "react";
 import ConditionalRender from "@/components/conditional-render/conditional-render.tsx";
 import OmsSyntaxHighlight from "@/components/oms-syntax-high-light/oms-syntax-high-light.tsx";
+import {DataItem} from "@/ayongUI/components/table";
 
 const essential: string = `
 import React from 'react';
@@ -101,7 +102,7 @@ const data = [
 export default App;                
 `
 
-const  JSXType: string = `
+const JSXType: string = `
 import React from 'react';
 import { Table} from 'ayongUI';
 const Column = Table.Column;
@@ -343,6 +344,57 @@ const App = () =>(
 )
 export default App; 
 `
+const sotre=`
+import React from 'react';
+import { Table} from 'ayongUI';
+const data = [
+    {
+        key: '1',
+        age: 32,
+        name: 'John Brown',
+        address: 'New York No. 1 Lake Park',
+        tags: ['nice', 'developer'],
+    },
+    {
+        key: '2',
+        age: 42,
+        name: 'Jim Green',
+        address: 'London No. 1 Lake Park',
+        tags: ['loser'],
+    },
+    {
+        key: '3',
+        age: 32,
+        name: 'Joe Black',
+        address: 'Sydney No. 1 Lake Park',
+        tags: ['cool', 'teacher'],
+    },
+];
+const columns =  [
+    {
+        title: '姓名',
+        dataIndex: 'name',
+        key: 'name',
+
+    },
+    {
+        title: '年龄',
+        dataIndex: 'age',
+        key: 'age',
+        defaultSortOrder: 'ascend',//指定默认排序方式分为  ascend descend 两种方式
+        sorter: (a, b) => a.age - b.age,//指定排序规则
+    },
+    {
+        title: '住址',
+        dataIndex: 'address',
+        key: 'address',
+    },
+];
+const App = () => (
+ <Table className='diy-table' columns={columns} data={data}/>
+);
+export default App;
+`
 
 const cellActiveClassName = `
 import React from 'react';
@@ -393,50 +445,119 @@ export default App;
 const data = [
     {
         key: '1',
-        name: 'type',
-        illustrate: '按钮类型 \'primary\' | \'default\' | \'dashed\' ',
-        defaultValue: 'default',
-        type: 'string',
+        name: 'data',
+        illustrate: '数据类型参照示例代码',
+        defaultValue: '-',
+        type: 'DataItem[]',
         version: '1.0'
     },
     {
         key: '2',
-        name: 'time',
-        illustrate: '防抖时间设置 0 为不防抖 ',
+        name: 'columns',
+        illustrate: '列数据 数据类型参照示例代码',
+        defaultValue: '-',
+        type: 'Column[]',
+        version: '1.0'
+    },
+    {
+        key: '3',
+        name: 'className',
+        illustrate: '样式类名',
+        defaultValue: '-',
+        type: 'string',
+        version: '1.0'
+    },
+    {
+        key: '4',
+        name: 'draggable',
+        illustrate: '是否可拖拽',
+        defaultValue: 'false',
+        type: 'boolean',
+        version: '1.0'
+    },
+    {
+        key: '5',
+        name: 'onDdragAfter',
+        illustrate: '拖拽后的回调,接受拖拽后的新行数据、列数据',
+        defaultValue: '-',
+        type: '(data: DataItem[], column: Column[]) => void;',
+        version: '1.0'
+    },
+    {
+        key: '6',
+        name: 'expandable',
+        illustrate: '扩展展开设置 ',
+        defaultValue: '-',
+        type: '详情见Expandable类型介绍',
+        version: '1.0'
+    },
+
+];
+const expandableData = [
+    {
+        key: '1',
+        name: 'expandedRowRender',
+        illustrate: '展开的行内容,可接受当前行的数据item,使用方式见代码示例',
+        defaultValue: '-',
+        type: '(item:DataItem) => React.FC',
+        version: '1.0'
+    },
+    {
+        key: '2',
+        name: 'expandedRowKeys',
+        illustrate: '具有展开的行的下标索引, 使用方式见代码示例',
+        defaultValue: '-',
+        type: 'string[]',
+        version: '1.0'
+    },
+    {
+        key: '3',
+        name: 'onExpandChange',
+        illustrate: '只有使用默认展开图标才有此参数!点击展开的回调,接受当前行数据的索引下标 与 当前展开状态',
+        defaultValue: '-',
+        type: '(index: number, state: boolean) => void',
+        version: '1.0'
+    },
+    {
+        key: '4',
+        name: 'expandIcon',
+        illustrate: '自定义展开的图标,接收 expandIconProps 参数,详见下方讲解',
+        defaultValue: '-',
+        type: '(props: expandIconProps) => ReactNode;',
+        version: '1.0'
+    },
+]
+
+const expandIconPropsData = [
+    {
+        key: '1',
+        name: 'expanded',
+        illustrate: '当前展开状态 true展开;false关闭',
+        defaultValue: 'false',
+        type: 'boolean',
+        version: '1.0'
+    },
+    {
+        key: '2',
+        name: 'record',
+        illustrate: '当前展开下标',
         defaultValue: '-',
         type: 'number',
         version: '1.0'
     },
     {
         key: '3',
-        name: 'size',
-        illustrate: '按钮大小 \'large\' | \'default\' | \'small\' ',
-        defaultValue: 'default',
-        type: 'string',
+        name: 'onExpand',
+        illustrate: '自定义展开icon! 必传字段用于动态改变icon状态',
+        defaultValue: '-',
+        type: '(record: number) => void',
         version: '1.0'
     },
-    {
-        key: '4',
-        name: 'shape',
-        illustrate: '按钮形状 \'circle\' | \'default\' | \'round\' ',
-        defaultValue: 'default',
-        type: 'string',
-        version: '1.0'
-    },
-    {
-        key: '5',
-        name: 'htmlType',
-        illustrate: '原生button类型 ',
-        defaultValue: 'button',
-        type: 'string',
-        version: '1.0'
-    },
-
-];
-
+]
 
 export default {
     data,
+    sotre,
     essential,
     jsxType,
     tableGroup,
@@ -444,5 +565,7 @@ export default {
     draggable,
     unfold,
     diyUnfold,
-    cellActiveClassName
+    cellActiveClassName,
+    expandIconPropsData,
+    expandableData
 }
