@@ -25,3 +25,5 @@ ayongUI
 *.sln
 *.sw?
 /src/ayongUI/
+/package-lock.json
+/yarn.lock
