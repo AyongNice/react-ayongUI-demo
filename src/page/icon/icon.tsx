@@ -4,7 +4,8 @@ import {
     EyesOpen, EyesClosed, Setup, Collapse, Unfold, Alipayfull, Advance, Wechatfull,
     Fileput, Download, Upload, Wechat, Weibofull, Weibo, Fulcopy, Taobao, Taobaoful, Android,
     Androidfu, Google, Googlefu, Plusround, Plusrofu, Minusround, Minusrfu, Upward, Upwardfu,
-    Downward, Downwardfu, Downwleft, Downwleftfu, Downwright, Downwrightfu
+    Downward, Downwardfu, Downwleft, Downwleftfu, Downwright, Downwrightfu, Arrotopfu,
+    Arrowbuttomfu, Arroleft, Arroright, Shrinks, Dilate, Rewind, Forward
 } from "@/ayongUI/index.ts";
 import Tab from "./components/tab.tsx";
 import React from "react";
@@ -118,6 +119,15 @@ const Icon = () => {
             cmp: Downwright,
             name: "Downwright",
         },
+        {
+            cmp: Shrinks,
+            name: "Shrinks",
+        },
+        {
+            cmp: Dilate,
+            name: "Dilate",
+        },
+
     ];
     const solidicon=[
         {
@@ -171,6 +181,30 @@ const Icon = () => {
         {
             cmp: Downwrightfu,
             name: "Downwrightfu",
+        },
+        {
+            cmp: Arrotopfu,
+            name: "Arrotopfu",
+        },
+        {
+            cmp: Arrowbuttomfu,
+            name: "Arrowbuttomfu",
+        },
+        {
+            cmp: Arroleft,
+            name: "Arroleft",
+        },
+        {
+            cmp: Arroright,
+            name: "Arroright",
+        },
+        {
+            cmp: Rewind,
+            name: "Rewind",
+        },
+        {
+            cmp: Forward,
+            name: "Forward",
         },
     ]
     const iconClick = (name: string) => {
