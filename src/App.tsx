@@ -1,5 +1,5 @@
 import React, { useState, useReducer, useEffect, useContext } from 'react';
-import './App.css';
+import './App.less';
 import { Routes, Route, Navigate } from 'react-router-dom';
 
 import MenuList from './page/menu-list/menu-list.tsx';
@@ -10,6 +10,7 @@ import Icon from './page/icon/icon.tsx';
 import SwitchPage from './page/switch/switch.tsx';
 import RadioPage from './page/radio/radio.tsx';
 import InputPage from './page/input/input.tsx';
+import TooltipPage from './page/tooltip/tooltip.tsx';
 
 import { Button } from './ayongUI/index.ts';
 
@@ -41,6 +42,7 @@ function App() {
 					<Route path='/menu/switch' element={<SwitchPage />} />
 					<Route path='/menu/radio' element={<RadioPage />} />
 					<Route path='/menu/input' element={<InputPage />} />
+					<Route path='/menu/tooltip' element={<TooltipPage />} />
 				</Route>
 			</Routes>
 		</div>
