@@ -11,10 +11,12 @@ import SwitchPage from './page/switch/switch.tsx';
 import RadioPage from './page/radio/radio.tsx';
 import InputPage from './page/input/input.tsx';
 import TooltipPage from './page/tooltip/tooltip.tsx';
+import Message from './page/message/message.tsx';
 
 import {Button} from './ayongUI/index.ts';
 
 import {useGlobalState} from './data-store/index.ts';
+
 
 function App() {
     const [theme, setTheme] = useGlobalState('theme');
@@ -58,6 +60,8 @@ function App() {
                     <Route path='/menu/radio' element={<RadioPage/>}/>
                     <Route path='/menu/input' element={<InputPage/>}/>
                     <Route path='/menu/tooltip' element={<TooltipPage/>}/>
+                    <Route path='/menu/message' element={<Message/>}/>
+
                 </Route>
             </Routes>
         </div>
