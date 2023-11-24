@@ -32,12 +32,12 @@ const ButtonPage = () => {
             <TitleCom title='button' onUnfold={onUnfold}/>
             <fieldset>
                 <legend>type 类型 设置</legend>
-                <Button>默认类型</Button>
-                <Button type='dashed'>dashed-虚线按钮</Button>
-                <Button type='primary'>primary-主题按钮</Button>
-                <Button type='dangerous'>dangerous-危险按钮</Button>
-                <Button type='warn'>warn-警告按钮</Button>
-                <Button type='safe'>safe-安全按钮</Button>
+                <Button className='button'>默认类型</Button>
+                <Button className='button' type='dashed'>dashed-虚线按钮</Button>
+                <Button className='button' type='primary'>primary-主题按钮</Button>
+                <Button className='button' type='dangerous'>dangerous-危险按钮</Button>
+                <Button className='button' type='warn'>warn-警告按钮</Button>
+                <Button className='button' type='safe'>safe-安全按钮</Button>
 
                 <ConditionalRender show={unfold}>
                     <OmsSyntaxHighlight textContent={codeDemo.typeSetingcodeConut}/>
