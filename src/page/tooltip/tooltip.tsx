@@ -1,5 +1,5 @@
 // import Tooltip from '../../ayongUI/components/tooltip/tooltip.tsx';
-import { Tooltip } from 'dist';
+import { Tooltip } from '@/ayongUI/index.ts';
 import { useState } from 'react';
 import { Button } from '@/ayongUI/index.ts';
 
