@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 // import {Button, Table} from "dist";
 import {Button, Table} from '@/ayongUI/index.ts';
 
@@ -21,9 +21,14 @@ const ButtonPage = () => {
     const onUnfold = (): void => {
         setUnfold(!unfold);
     };
-
+    const [count, setCount] = useState(0);
+    const [count2, setCount2] = useState(0);
+    useEffect(() => {
+        setCount(count + 1);
+    }, [count2]);
     return (
         <div>
+
             <TitleCom title='button' onUnfold={onUnfold}/>
             <fieldset>
                 <legend>type 类型 设置</legend>

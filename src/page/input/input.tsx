@@ -1,4 +1,4 @@
-import Input from '../../ayongUI/components/input';
+import { Input } from '@/ayongUI/index.ts';
 
 const InputPage = () => {
 	return (

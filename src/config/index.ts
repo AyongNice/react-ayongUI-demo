@@ -11,6 +11,8 @@ const MENULIST: Menu[] = [
 	{ title: 'radio组件', path: '/radio', id: +new Date() + '' },
 	{ title: 'input组件', path: '/input', id: +new Date() + '' },
 	{ title: 'tooltip组件', path: '/tooltip', id: +new Date() + '' },
+	{ title: 'Message全局提示', path: '/message', id: +new Date() + '' },
+
 ];
 
 const THEME: string[] = ['night', 'light']; //白天 .晚上主题

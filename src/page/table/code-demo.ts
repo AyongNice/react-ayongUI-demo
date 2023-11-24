@@ -3,7 +3,7 @@ import {Table} from "../../ayongUI";
 import React from "react";
 import ConditionalRender from "@/components/conditional-render/conditional-render.tsx";
 import OmsSyntaxHighlight from "@/components/oms-syntax-high-light/oms-syntax-high-light.tsx";
-import {DataItem} from "@/ayongUI/components/table";
+import {DataItem} from "@/ayongUI/components/table/table.tsx";
 
 const essential: string = `
 import React from 'react';
