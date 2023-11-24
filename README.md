@@ -33,6 +33,25 @@ npm run dev
 4. 在config配置文件添加组件页面的配置 左侧菜单信息
 5. 在组件页面 引入开发好的 ayongUI 组件进行演示
 
+## 组件库的结构目录说明 (在组件库ayongUI仓库内也有一份)
+### ⚠️组件库的导出 必须统一在index.ts文件内导出
+
+```json
+ ———— components
+|··· 主体组件
+———— config 组件全局配置
+|
+———style.module.less 全局样式
+———style-const.ts    全局样式TS常量
+———— utils 工具类
+———— index.ts 组件总入口文件所有组件导出地方
+———— package.json 组件依赖文件
+———— tsconfig.json 组件TS配置
+———— tsconfig.node.json 组件TS-node配置
+———— vite.config.ts 组件打包配置
+———— yarn.lock 组件打包依赖版本锁
+```
+
 ## 组件样式规范
 
 1. 样式必须使用 model类型文件 类名使用 小驼峰
@@ -62,7 +81,9 @@ import {Button, Table} from "@/ayongUI/index.ts";
 //测试组件
 ```
 ### 测试模式
-1. 执行demo中的 test命令   **npm run test**  根据弹窗提示操作
+1. 执行demo中的 test命令   **npm run test**  根据弹窗提示操作 
+2. 如果执行命令失败 请手动执行 组件库的 **npm run build** 命令 将组件库的package.json 文件 复制到 dist 产物中   然后将dist产物移动到demo中的node_modules文件夹下 然后删除demo中的node_modules文件夹下的.vite缓存文件夹 
+3. 重启项目
 
 ```js
 //demo页面路径需要改成 dist
