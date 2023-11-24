@@ -1,4 +1,4 @@
-import Tooltip from '../../ayongUI/components/tooltip';
+import Tooltip from '../../ayongUI/components/tooltip/tooltip.tsx';
 
 const Popup = () => (
 	<div
@@ -6,6 +6,7 @@ const Popup = () => (
 			height: 30,
 			border: '1px solid #ddd',
 			background: 'black',
+			whiteSpace: 'nowrap',
 		}}
 	>
 		This is a popup
@@ -18,34 +19,26 @@ const TooltipPage = () => {
 			<h1>Tooltip</h1>
 			<fieldset>
 				<legend>基本1</legend>
-				<Tooltip popup={<Popup />}>
-					<button style={{ marginRight: '0px', height: '20px' }}>
-						{'hover1'}
-					</button>
+				<Tooltip popup={'123456'}>
+					<div>{'hover1'}</div>
 				</Tooltip>
 			</fieldset>
 			<fieldset>
 				<legend>基本2</legend>
 				<Tooltip placement='right' popup={<Popup />}>
-					<button style={{ marginRight: '0px', height: '20px' }}>
-						{'hover2'}
-					</button>
+					<div>{'hover2'}</div>
 				</Tooltip>
 			</fieldset>
 			<fieldset>
 				<legend>基本3</legend>
-				<Tooltip popup={<Popup />} placement='bottom'>
-					<button style={{ marginRight: '0px', height: '20px' }}>
-						{'hover3'}
-					</button>
+				<Tooltip placement='bottom' popup={<Popup />}>
+					<div>{'hover3'}</div>
 				</Tooltip>
 			</fieldset>
 			<fieldset>
 				<legend>基本3</legend>
-				<Tooltip popup={<Popup />} placement='left'>
-					<button style={{ marginRight: '0px', height: '20px' }}>
-						{'hover3'}
-					</button>
+				<Tooltip placement='left' popup={<Popup />}>
+					<div>{'hover3'}</div>
 				</Tooltip>
 			</fieldset>
 		</div>
