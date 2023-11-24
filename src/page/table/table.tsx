@@ -1,6 +1,8 @@
 import React, { useEffect, useState, useMemo } from 'react';
-// import {Table,CodeDisplay} from "dist";
-import { Table, CodeDisplay } from '@/ayongUI/index.ts';
+import {Table,CodeDisplay} from "dist";
+
+console.log('Table', Table);
+// import { Table, CodeDisplay } from '@/ayongUI/index.ts';
 import './index.less';
 import ConditionalRender from '../../components/conditional-render/conditional-render.tsx';
 import OmsSyntaxHighlight from '../../components/oms-syntax-high-light/oms-syntax-high-light.tsx';
