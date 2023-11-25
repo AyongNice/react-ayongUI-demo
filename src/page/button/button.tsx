@@ -1,5 +1,4 @@
-import {useEffect, useState} from 'react';
-// import {Button, Table} from "dist";
+import {useState} from 'react';
 import {Button, Table} from '@/ayongUI/index.ts';
 
 import './index.less';
@@ -11,17 +10,17 @@ import global from '@/config/index.ts';
 import {useGlobalState} from '../../data-store/index.ts';
 
 const ButtonPage = () => {
-    const [unfold, setUnfold] = useState<boolean>(true);
     const [theme, setTheme] = useGlobalState('theme');
 
-    const onClick = (): void => {
-    };
+    const [unfold, setUnfold] = useState<boolean>(true);
 
     /** 展开/折叠示例 **/
     const onUnfold = (): void => {
         setUnfold(!unfold);
     };
 
+    const onClick = (): void => {
+    };
     return (
         <div>
 
@@ -31,7 +30,7 @@ const ButtonPage = () => {
                 <Button className='button'>默认类型</Button>
                 <Button className='button' type='dashed'>dashed-虚线按钮</Button>
                 <Button className='button' type='primary'>primary-主题按钮</Button>
-                <Button className='button' type='dangerous'>dangerous-危险按钮</Button>
+                <Button className='button' type='error'>dangerous-危险按钮</Button>
                 <Button className='button' type='warn'>warn-警告按钮</Button>
                 <Button className='button' type='safe'>safe-安全按钮</Button>
 

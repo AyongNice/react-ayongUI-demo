@@ -16,7 +16,6 @@ const globalState: { callbacks: string[] } = new Proxy({
             return true;
         },
     });
-console.log(globalState)
 
 // 订阅全局状态的 Hook
 export const useGlobalState = (key) => {
