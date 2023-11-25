@@ -28,21 +28,12 @@ function App() {
             (countRef.current++);
             return;
         }
-        setTheme((previe): string => {
+        setTheme((previe:string) => {
             const res = previe === 'night' ? 'light' : 'night';
             window.localStorage.setItem('theme', res);
             return res;
         });
     }, [theme]);
-
-
-    // const toggleTheme = (): void => {
-    //     // setTheme((previe: string) => {
-    //     //     const res = previe === 'night' ? 'light' : 'night';
-    //     //     window.localStorage.setItem('theme', res);
-    //     //     return res;
-    //     // });
-    // }
 
     return (
         <div className={theme}>
