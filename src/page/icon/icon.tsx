@@ -1,13 +1,14 @@
 import "./index.less";
 import {
     Alipay, Alert, PreviousStep, FileCopy, CodeDisplay, LabelersLists, UserHollow,
-    EyesOpen, EyesClosed, Setup, Collapse, Unfold, Alipayfull, Advance, Wechatfull,
+    EyesOpen, EyesClosed, Setting, Collapse, Unfold, Alipayfull, Advance, Wechatfull,
     Fileput, Download, Upload, Wechat, Weibofull, Weibo, Fulcopy, Taobao, Taobaoful, Android,
     Androidfu, Google, Googlefu, Plusround, Plusrofu, Minusround, Minusrfu, Upward, Upwardfu,
     Downward, Downwardfu, Downwleft, Downwleftfu, Downwright, Downwrightfu, Arrotopfu,
-    Arrowbuttomfu, Arroleft, Arroright, Shrinks, Dilate, Rewind, Forward,
-    Doubleright, Doubleleft,
-    Aligntop, Alignbottom, Aligncenter, Enter, Rollback,Retweet,Swap,Swapleft,Swapright,Tick
+    Arrowbuttomfu, Arroleft, Arroright, Shrinks, Dilate, Rewind, Forward, Doubleright,
+    Doubleleft, Aligntop, Alignbottom, Aligncenter, Enter, Rollback, Retweet, Swap,
+    Swapleft, Swapright, Tick, Wrong, Lament, Illustrate, Delete, Search, Transfer,
+    Unlock, Save,
 } from "@/ayongUI/index.ts";
 import Tab from "./components/tab.tsx";
 import React from "react";
@@ -62,8 +63,8 @@ const Icon = () => {
             name: "EyesClosed",
         },
         {
-            cmp: Setup,
-            name: "Setup",
+            cmp: Setting,
+            name: "Setting",
         },
         {
             cmp: Fileput,
@@ -173,7 +174,26 @@ const Icon = () => {
             cmp: Swapright,
             name: "Swapright",
         },
-
+        {
+            cmp: Delete,
+            name: "Delete",
+        },
+        {
+            cmp: Search,
+            name: "Search",
+        },
+        {
+            cmp: Transfer,
+            name: "Transfer",
+        },
+        {
+            cmp: Unlock,
+            name: "Unlock",
+        },
+        {
+            cmp: Save,
+            name: "Save",
+        },
     ];
     const solidicon=[
         {
@@ -255,6 +275,18 @@ const Icon = () => {
         {
             cmp: Tick,
             name: "Tick",
+        },
+        {
+            cmp: Wrong,
+            name: "Wrong",
+        },
+        {
+            cmp: Lament,
+            name: "Lament",
+        },
+        {
+            cmp: Illustrate,
+            name: "Illustrate",
         },
     ]
     const iconClick = (name: string) => {
