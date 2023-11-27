@@ -1,17 +1,14 @@
 import React, { useEffect, useState, useMemo } from 'react';
 // import {Table,CodeDisplay} from "dist";
-
-import { Table, CodeDisplay } from 'dist';
+import { Table, CodeDisplay } from "@/ayongUI/index.ts";;
 import './index.less';
 import ConditionalRender from '../../components/conditional-render/conditional-render.tsx';
 import OmsSyntaxHighlight from '../../components/oms-syntax-high-light/oms-syntax-high-light.tsx';
 import codeDemo from './code-demo.ts';
 import TitleCom from '../../components/title-com/title-com.tsx';
 import { useGlobalState } from '../../data-store/index.ts';
-
 import { MinusCircleOutlined, PlusCircleOutlined } from '@ant-design/icons';
 import global from '@/config/index.ts';
-
 const Column = Table.Column;
 const ColumnGroup = Table.ColumnGroup;
 

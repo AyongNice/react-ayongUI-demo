@@ -13,7 +13,7 @@ dist
 dist-ssr
 *.local
 ayongUI
-
+*.lock
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
@@ -26,4 +26,3 @@ ayongUI
 *.sw?
 /src/ayongUI/
 /package-lock.json
-/yarn.lock

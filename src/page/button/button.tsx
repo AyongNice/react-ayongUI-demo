@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import {Button, Table} from 'dist';
+import {Button, Table} from "@/ayongUI/index.ts";
 import './index.less';
 import OmsSyntaxHighlight from '../../components/oms-syntax-high-light/oms-syntax-high-light.tsx';
 import TitleCom from '../../components/title-com/title-com.tsx';
@@ -7,8 +7,7 @@ import codeDemo from './code-demo.ts';
 import ConditionalRender from '../../components/conditional-render/conditional-render.tsx';
 import global from '@/config/index.ts';
 import {useGlobalState} from '../../data-store/index.ts';
-import style from './qwe.module.less'
-
+import  style from "./qwe.module.less";
 const ButtonPage = () => {
     const [theme, setTheme] = useGlobalState('theme');
 
