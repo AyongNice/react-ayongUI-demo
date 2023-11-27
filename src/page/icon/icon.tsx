@@ -5,8 +5,9 @@ import {
     Fileput, Download, Upload, Wechat, Weibofull, Weibo, Fulcopy, Taobao, Taobaoful, Android,
     Androidfu, Google, Googlefu, Plusround, Plusrofu, Minusround, Minusrfu, Upward, Upwardfu,
     Downward, Downwardfu, Downwleft, Downwleftfu, Downwright, Downwrightfu, Arrotopfu,
-    Arrowbuttomfu, Arroleft, Arroright, Shrinks, Dilate, Rewind, Forward, Doubleright, Doubleleft,
-    Aligntop, Alignbottom, Aligncenter, Enter, Rollback,Retweet,Swap,Swapleft,Swapright,Tick
+    Arrowbuttomfu, Arroleft, Arroright, Shrinks, Dilate, Rewind, Forward,
+    // Doubleright, Doubleleft,
+    // Aligntop, Alignbottom, Aligncenter, Enter, Rollback,Retweet,Swap,Swapleft,Swapright,Tick
 } from "@/ayongUI/index.ts";
 import Tab from "./components/tab.tsx";
 import React from "react";
@@ -128,50 +129,50 @@ const Icon = () => {
             cmp: Dilate,
             name: "Dilate",
         },
-        {
-            cmp: Doubleright,
-            name: "Doubleright",
-        },
-        {
-            cmp: Doubleleft,
-            name: "Doubleleft",
-        },
-        {
-            cmp: Aligntop,
-            name: "Aligntop",
-        },
-        {
-            cmp: Alignbottom,
-            name: "Alignbottom",
-        },
-        {
-            cmp: Aligncenter,
-            name: "Aligncenter",
-        },
-        {
-            cmp: Enter,
-            name: "Enter",
-        },
-        {
-            cmp: Rollback,
-            name: "Rollback",
-        },
-        {
-            cmp: Retweet,
-            name: "Retweet",
-        },
-        {
-            cmp: Swap,
-            name: "Swap",
-        },
-        {
-            cmp: Swapleft,
-            name: "Swapleft",
-        },
-        {
-            cmp: Swapright,
-            name: "Swapright",
-        },
+        // {
+        //     cmp: Doubleright,
+        //     name: "Doubleright",
+        // },
+        // {
+        //     cmp: Doubleleft,
+        //     name: "Doubleleft",
+        // },
+        // {
+        //     cmp: Aligntop,
+        //     name: "Aligntop",
+        // },
+        // {
+        //     cmp: Alignbottom,
+        //     name: "Alignbottom",
+        // },
+        // {
+        //     cmp: Aligncenter,
+        //     name: "Aligncenter",
+        // },
+        // {
+        //     cmp: Enter,
+        //     name: "Enter",
+        // },
+        // {
+        //     cmp: Rollback,
+        //     name: "Rollback",
+        // },
+        // {
+        //     cmp: Retweet,
+        //     name: "Retweet",
+        // },
+        // {
+        //     cmp: Swap,
+        //     name: "Swap",
+        // },
+        // {
+        //     cmp: Swapleft,
+        //     name: "Swapleft",
+        // },
+        // {
+        //     cmp: Swapright,
+        //     name: "Swapright",
+        // },
 
     ];
     const solidicon=[
@@ -251,10 +252,10 @@ const Icon = () => {
             cmp: Forward,
             name: "Forward",
         },
-        {
-            cmp: Tick,
-            name: "Tick",
-        },
+        // {
+        //     cmp: Tick,
+        //     name: "Tick",
+        // },
     ]
     const iconClick = (name: string) => {
         copyText(`<${name}/>`);
