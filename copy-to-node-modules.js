@@ -25,7 +25,9 @@ if (fs.existsSync(viteCachePath)) {
 // 显示通知
 // 1. 执行ayongUI组件打包构建命令
 const ayongUIPath = path.resolve(__dirname, 'src/ayongUI');
+const demo = path.resolve(__dirname, './package.json');
 execSync('npm run build', {cwd: ayongUIPath, stdio: 'inherit'});
+// execSync('npm run dev', {cwd: demo, stdio: 'inherit'});
 
 function showNotification(message) {
    if (process.platform === 'darwin') {
