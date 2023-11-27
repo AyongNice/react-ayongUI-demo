@@ -1,6 +1,5 @@
 import {useState} from 'react';
-import {Button, Table} from '@/ayongUI/index.ts';
-
+import {Button, Table} from 'dist';
 import './index.less';
 import OmsSyntaxHighlight from '../../components/oms-syntax-high-light/oms-syntax-high-light.tsx';
 import TitleCom from '../../components/title-com/title-com.tsx';
@@ -8,6 +7,7 @@ import codeDemo from './code-demo.ts';
 import ConditionalRender from '../../components/conditional-render/conditional-render.tsx';
 import global from '@/config/index.ts';
 import {useGlobalState} from '../../data-store/index.ts';
+import style from './qwe.module.less'
 
 const ButtonPage = () => {
     const [theme, setTheme] = useGlobalState('theme');
@@ -21,18 +21,20 @@ const ButtonPage = () => {
 
     const onClick = (): void => {
     };
+
+
     return (
         <div>
 
             <TitleCom title='button' onUnfold={onUnfold}/>
             <fieldset>
                 <legend>type 类型 设置</legend>
-                <Button className='button'>默认类型</Button>
-                <Button className='button' type='dashed'>dashed-虚线按钮</Button>
-                <Button className='button' type='primary'>primary-主题按钮</Button>
-                <Button className='button' type='error'>dangerous-危险按钮</Button>
-                <Button className='button' type='warn'>warn-警告按钮</Button>
-                <Button className='button' type='safe'>safe-安全按钮</Button>
+                <Button className={style.button}>默认类型</Button>
+                <Button className={style.button} type='dashed'>dashed-虚线按钮</Button>
+                <Button className={style.button} type='primary'>primary-主题按钮</Button>
+                <Button className={style.button} type='error'>dangerous-危险按钮</Button>
+                <Button className={style.button} type='warn'>warn-警告按钮</Button>
+                <Button className={style.button} type='safe'>safe-安全按钮</Button>
 
                 <ConditionalRender show={unfold}>
                     <OmsSyntaxHighlight textContent={codeDemo.typeSetingcodeConut}/>
@@ -54,8 +56,8 @@ const ButtonPage = () => {
             </fieldset>
             <fieldset>
                 <legend>自定义 className 样式</legend>
-                <Button type='primary' onClick={onClick} className='diy'>
-                    small-ayongUI
+                <Button onClick={onClick} className='diy'>
+                    自定义样式
                 </Button>
 
                 <ConditionalRender show={unfold}>

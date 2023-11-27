@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useMemo } from 'react';
 // import {Table,CodeDisplay} from "dist";
 
-import { Table, CodeDisplay } from '@/ayongUI/index.ts';
+import { Table, CodeDisplay } from 'dist';
 import './index.less';
 import ConditionalRender from '../../components/conditional-render/conditional-render.tsx';
 import OmsSyntaxHighlight from '../../components/oms-syntax-high-light/oms-syntax-high-light.tsx';
@@ -157,8 +157,8 @@ function TablePage() {
 			<fieldset>
 				<legend>指定 data 和 columns数据基本写法</legend>
 
+
 				<Table
-					data={data}
 					columns={columns}
 					className={`table-theme-${theme}`}
 					cellActiveClassName={cellActiveClassName}
@@ -225,9 +225,9 @@ function TablePage() {
 			</fieldset>
 			<fieldset>
 				<legend>表头分组</legend>
-				<Table data={data} className={`table-theme-${theme}`}>
+				<Table  data={data} className={`table-theme-${theme}`}>
 					<Column title='First Name' dataIndex='firstName' key={10} />
-					<ColumnGroup title='Name' key={666}>
+					<ColumnGroup  title='Name' key={666}>
 						<Column title='Last Name' dataIndex='lastName' key={11} />
 						<Column title='Age' dataIndex='age' key={1} />
 					</ColumnGroup>
