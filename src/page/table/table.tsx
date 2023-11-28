@@ -153,7 +153,6 @@ function TablePage() {
 			<TitleCom title='Table' onUnfold={onUnfold} />
 			<fieldset>
 				<legend>指定 data 和 columns数据基本写法</legend>
-
 				<Table
 					data={data}
 					columns={columns}

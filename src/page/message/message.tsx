@@ -28,6 +28,12 @@ const MessagePage = () => {
             }
         })
     }
+    const onDuration = () => {
+        Message.info({
+            message: 'This is a info message', showClose: true,
+            duration: '6',
+        })
+    }
     return (
         <>
             <TitleCom title='Message' onUnfold={onUnfold}/>
@@ -51,6 +57,12 @@ const MessagePage = () => {
                 <legend>显示关闭按钮</legend>
                 <Button className='button-mes' onClick={onMessage}>info-消息</Button>
             </fieldset>
+
+            <fieldset>
+                <legend>自定义时间6秒</legend>
+                <Button className='button-mes' onClick={onDuration}>自定义时长</Button>
+            </fieldset>
+
         </>
 
     );

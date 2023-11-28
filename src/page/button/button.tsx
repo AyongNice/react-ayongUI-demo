@@ -1,5 +1,7 @@
 import {useState} from 'react';
-import {Button, Table} from "@/ayongUI/index.ts";
+// import {Button, Table} from "@/ayongUI/index.ts";
+import {Button, Table} from "dist";
+
 import './index.less';
 import OmsSyntaxHighlight from '../../components/oms-syntax-high-light/oms-syntax-high-light.tsx';
 import TitleCom from '../../components/title-com/title-com.tsx';
@@ -7,7 +9,7 @@ import codeDemo from './code-demo.ts';
 import ConditionalRender from '../../components/conditional-render/conditional-render.tsx';
 import global from '@/config/index.ts';
 import {useGlobalState} from '../../data-store/index.ts';
-import  style from "./qwe.module.less";
+import  style from "./index.module.less";
 const ButtonPage = () => {
     const [theme, setTheme] = useGlobalState('theme');
 
@@ -42,10 +44,10 @@ const ButtonPage = () => {
 
             <fieldset>
                 <legend>shape 形状 设置</legend>
-                <Button>默认-按钮</Button>
-                <Button shape='strong'>直角-按钮</Button>
-                <Button shape='round'>round-椭圆钮</Button>
-                <Button type='primary' href='https://github.com/AyongNice/ayongUI'>
+                <Button className={style.button}>默认-按钮</Button>
+                <Button className={style.button} shape='strong'>直角-按钮</Button>
+                <Button className={style.button} shape='round'>round-椭圆钮</Button>
+                <Button className={style.button} type='primary' href='https://github.com/AyongNice/ayongUI'>
                     href-跳转按钮
                 </Button>
 
