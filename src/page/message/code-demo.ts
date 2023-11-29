@@ -58,7 +58,22 @@ const App = () => {
 }
 export default App; 
 `
+const diyIcon: string = `
+import {Button, Message} from 'ayongUI';
 
+const App = () => {
+    const onDiyIcon = () => {
+        Message.info({
+            message: 'This is a diy Icon message',
+            icon: <Setting/>,
+            useHTMLString: true,
+        })
+    }
+    return (<Button className='button-mes' onClick={onDiyIcon}>自定义icon</Button>
+)
+}
+export default App; 
+`
 const data = [
     {
         key: '1',
@@ -92,6 +107,15 @@ const data = [
         type: ' () => void',
         version: '1.0'
     },
+    {
+        key: '5',
+        name: 'icon',
+        illustrate: '自定义 Icon',
+        defaultValue: '-',
+        type: 'React.Fc',
+        version: '1.0'
+
+    }
 
 ];
 
@@ -102,4 +126,5 @@ export default {
     showClose,
     useHTML,
     diyTime,
+    diyIcon
 }

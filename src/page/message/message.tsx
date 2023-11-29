@@ -1,4 +1,4 @@
-import {Button, Message, Table} from '@/ayongUI/index.ts';
+import {Button, Message, Table, Setting} from '@/ayongUI/index.ts';
 
 import TitleCom from '../../components/title-com/title-com.tsx';
 import React, {useEffect, useState} from "react";
@@ -11,6 +11,7 @@ import {useGlobalState} from '../../data-store/index.ts';
 
 const data = [
     {
+        key: '1',
         name: 'Message.info',
         description: '显示普通提示消息',
         parameter: 'MessageProps见下方详情',
@@ -18,6 +19,7 @@ const data = [
         default: '-'
     },
     {
+        key: '2',
         name: 'Message.success',
         description: '显示成功提示消息',
         parameter: 'MessageProps见下方详情',
@@ -25,6 +27,7 @@ const data = [
         default: '-'
     },
     {
+        key: '3',
         name: 'Message.warning',
         description: '显示警告提示消息',
         parameter: 'MessageProps见下方详情',
@@ -32,6 +35,7 @@ const data = [
         default: '-'
     },
     {
+        key: '4',
         name: 'Message.error',
         description: '显示错误提示消息',
         parameter: 'MessageProps见下方详情',
@@ -86,7 +90,8 @@ const MessagePage = () => {
     )
     const onMessage = () => {
         Message.info({
-            message: 'This is a info message', showClose: true,
+            message: 'This is a info message',
+            showClose: true,
             onClose: () => {
                 console.log('关闭了')
             }
@@ -94,13 +99,20 @@ const MessagePage = () => {
     }
     const onDuration = () => {
         Message.info({
-            message: 'This is a info message', showClose: true,
+            message: 'This is a info message',
             duration: '6',
         })
     }
     const onUseHTML = () => {
         Message.info({
             message: <h2>这是一个HTML内容</h2>,
+            useHTMLString: true,
+        })
+    }
+    const onDiyIcon = () => {
+        Message.info({
+            message: 'This is a diy Icon message',
+            icon: <Setting/>,
             useHTMLString: true,
         })
     }
@@ -146,12 +158,21 @@ const MessagePage = () => {
             </fieldset>
 
             <fieldset>
-                <legend>自定义时间6秒</legend>
+                <legend>自定义显示时间6秒</legend>
                 <Button className='button-mes' onClick={onDuration}>自定义时长</Button>
                 <ConditionalRender show={unfold}>
                     <OmsSyntaxHighlight textContent={codeDemo.diyTime}/>
                 </ConditionalRender>
             </fieldset>
+
+            <fieldset>
+                <legend>自定义icon</legend>
+                <Button className='button-mes' onClick={onDiyIcon}>自定义icon</Button>
+                <ConditionalRender show={unfold}>
+                    <OmsSyntaxHighlight textContent={codeDemo.diyIcon}/>
+                </ConditionalRender>
+            </fieldset>
+
             <h2>method 介绍</h2>
 
             <Table

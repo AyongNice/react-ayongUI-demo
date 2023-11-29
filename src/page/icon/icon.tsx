@@ -8,11 +8,12 @@ import {
     Arrowbuttomfu, Arroleft, Arroright, Shrinks, Dilate, Rewind, Forward, Doubleright,
     Doubleleft, Aligntop, Alignbottom, Aligncenter, Enter, Rollback, Retweet, Swap,
     Swapleft, Swapright, Tick, Wrong, Lament, Illustrate, Delete, Search, Transfer,
-    Unlock, Save,
+    Unlock, Save, Message
 } from "@/ayongUI/index.ts";
 import Tab from "./components/tab.tsx";
 import React from "react";
 import {copyText} from "@/utils/index.ts";
+
 const Icon = () => {
     const iconCmps = [
         {
@@ -26,7 +27,7 @@ const Icon = () => {
         {
             cmp: PreviousStep,
             name: "PreviousStep",
-        },   {
+        }, {
             cmp: Advance,
             name: "Advance",
         },
@@ -195,7 +196,7 @@ const Icon = () => {
             name: "Save",
         },
     ];
-    const solidicon=[
+    const solidicon = [
         {
             cmp: Alipayfull,
             name: "Alipayfull",
@@ -291,6 +292,7 @@ const Icon = () => {
     ]
     const iconClick = (name: string) => {
         copyText(`<${name}/>`);
+        Message.success({message: "复制成功", duration: 1});
     };
     let tabData = [
         {
