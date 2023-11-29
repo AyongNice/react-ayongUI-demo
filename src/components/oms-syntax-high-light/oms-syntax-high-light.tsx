@@ -22,6 +22,7 @@ const them = {
 import {copyText} from "../../utils/index.ts";
 import {FileCopy} from "@/ayongUI/index.ts";
 import style from './index.module.less'
+import {Message} from '@/ayongUI/index.ts';
 
 interface OmsSyntax {
     darkMode: string;
@@ -37,10 +38,15 @@ const OmsSyntaxHighlight = ({
                             }: OmsSyntax) => {
 
 
-    if (!textContent) return
+    if (!textContent) return;
+    const onCopy = () => {
+        Message.info({message: '复制成功'});
+        copyText(textContent)
+    }
+
     return (
         <div className={style.highlighterBox}>
-            <FileCopy className={style.copy} onClick={() => copyText(textContent)}/>
+            <FileCopy className={style.copy} onClick={onCopy}/>
             <SyntaxHighlighter
                 showLineNumbers={true} // 是否展示左侧行数
                 lineNumberStyle={{color: '#ddd', fontSize: 10}} // 左侧行数的样式
