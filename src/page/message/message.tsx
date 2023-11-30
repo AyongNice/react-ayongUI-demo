@@ -1,13 +1,13 @@
 import {Button, Message, Table, Setting} from '@/ayongUI/index.ts';
 
-import TitleCom from '../../components/title-com/title-com.tsx';
+import TitleCom from '@/components/title-com/title-com.tsx';
 import React, {useEffect, useState} from "react";
 import './index.less';
-import ConditionalRender from '../../components/conditional-render/conditional-render.tsx';
-import OmsSyntaxHighlight from '../../components/oms-syntax-high-light/oms-syntax-high-light.tsx';
+import ConditionalRender from '@/components/conditional-render/conditional-render.tsx';
+import OmsSyntaxHighlight from '@/components/oms-syntax-high-light/oms-syntax-high-light.tsx';
 import codeDemo from "./code-demo.ts";
-import global from "../../config";
-import {useGlobalState} from '../../data-store/index.ts';
+import global from "@/config/index.ts";
+import {useGlobalState} from '@/data-store/index.ts';
 
 const data = [
     {
