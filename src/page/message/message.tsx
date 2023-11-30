@@ -76,7 +76,7 @@ const columns = [
 const MessagePage = () => {
     const [theme, setTheme] = useGlobalState('theme');
 
-    const [unfold, setUnfold] = useState<boolean>(true);
+    const [unfold, setUnfold] = useState<boolean>(false);
     /** 展开/折叠示例 **/
     const onUnfold = (): void => {
         setUnfold(!unfold);
