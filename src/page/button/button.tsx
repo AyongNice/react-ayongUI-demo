@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 // import {Button, Table} from "@/ayongUI/index.ts";
-import {Button, Table, CodeDisplay} from "dist";
+import {Button, Table, CodeDisplay} from "@/ayongUI/index.ts";
 
 import './index.less';
 import OmsSyntaxHighlight from '@/components/oms-syntax-high-light/oms-syntax-high-light.tsx';
