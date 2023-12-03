@@ -8,12 +8,12 @@ import {
     Arrowbuttomfu, Arroleft, Arroright, Shrinks, Dilate, Rewind, Forward, Doubleright,
     Doubleleft, Aligntop, Alignbottom, Aligncenter, Enter, Rollback, Retweet, Swap,
     Swapleft, Swapright, Tick, Wrong, Lament, Illustrate, Delete, Search, Transfer,
-    Unlock, Save, Message
+    Unlock, Save, Message, Play, Panetop, Panedown, Paneleft, Paneright, Login, Logout,
+    Menufold, Menuunfold
 } from "@/ayongUI/index.ts";
 import Tab from "./components/tab.tsx";
 import React from "react";
 import {copyText} from "@/utils/index.ts";
-
 const Icon = () => {
     const iconCmps = [
         {
@@ -27,7 +27,8 @@ const Icon = () => {
         {
             cmp: PreviousStep,
             name: "PreviousStep",
-        }, {
+        },
+        {
             cmp: Advance,
             name: "Advance",
         },
@@ -194,6 +195,42 @@ const Icon = () => {
         {
             cmp: Save,
             name: "Save",
+        },
+        {
+            cmp: Play,
+            name: "Play",
+        },
+        {
+            cmp: Panetop,
+            name: "Panetop",
+        },
+        {
+            cmp: Panedown,
+            name: "Panedown",
+        },
+        {
+            cmp: Paneleft,
+            name: "Paneleft",
+        },
+        {
+            cmp: Paneright,
+            name: "Paneright",
+        },
+        {
+            cmp: Login,
+            name: "Login",
+        },
+        {
+            cmp: Logout,
+            name: "Logout",
+        },
+        {
+            cmp: Menufold,
+            name: "Menufold",
+        },
+        {
+            cmp: Menuunfold,
+            name: "Menuunfold",
         },
     ];
     const solidicon = [
