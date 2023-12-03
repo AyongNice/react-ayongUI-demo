@@ -12,6 +12,8 @@ import RadioPage from './page/radio/radio.tsx';
 import InputPage from './page/input/input.tsx';
 import TooltipPage from './page/tooltip/tooltip.tsx';
 import Message from './page/message/message.tsx';
+import Rate from './page/rate/rate.tsx';
+
 
 import {Button} from './ayongUI/index.ts';
 
@@ -28,7 +30,7 @@ function App() {
             (countRef.current++);
             return;
         }
-        setTheme((previe:string) => {
+        setTheme((previe: string) => {
             const res = previe === 'night' ? 'light' : 'night';
             window.localStorage.setItem('theme', res);
             return res;
@@ -52,6 +54,7 @@ function App() {
                     <Route path='/menu/input' element={<InputPage/>}/>
                     <Route path='/menu/tooltip' element={<TooltipPage/>}/>
                     <Route path='/menu/message' element={<Message/>}/>
+                    <Route path='/menu/rate' element={<Rate/>}/>
 
                 </Route>
             </Routes>
