@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, Rate} from '@/ayongUI/index.ts';
+import {Button, Rate, Alert} from '@/ayongUI/index.ts';
 import ConditionalRender from "@/components/conditional-render/conditional-render.tsx";
 import OmsSyntaxHighlight from "@/components/oms-syntax-high-light/oms-syntax-high-light.tsx";
 
@@ -34,6 +34,14 @@ const Ratepage: React.FC = () => {
         <fieldset>
             <legend>自定义color</legend>
             <Rate color='#cbbcf7' value={3}/>
+            {/*<ConditionalRender show={false}>*/}
+            {/*    <OmsSyntaxHighlight/>*/}
+            {/*</ConditionalRender>*/}
+        </fieldset>
+
+        <fieldset>
+            <legend>自定义icon</legend>
+            <Rate value={3} color='#cbbcf7' icon={Alert}/>
             {/*<ConditionalRender show={false}>*/}
             {/*    <OmsSyntaxHighlight/>*/}
             {/*</ConditionalRender>*/}
