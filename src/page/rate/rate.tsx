@@ -1,10 +1,11 @@
 import React from 'react';
-import {Rate, Alert} from '@/ayongUI/index.ts';
+import {Rate, Table, Alert} from '@/ayongUI/index.ts';
 import codeDemo from "./code-demo.ts";
 import {useGlobalState} from '@/data-store/index.ts';
 import TitleCom from "@/components/title-com/title-com.tsx";
 import CodeDisplayCom from "@/components/code-display/code-display.tsx";
 import useExpandableList from "@/components/code-display/index.ts";
+import global from '@/config/index.ts';
 
 const Ratepage: React.FC = () => {
 
@@ -40,6 +41,12 @@ const Ratepage: React.FC = () => {
             <Rate value={3} icon={Alert}/>
             <CodeDisplayCom textContent={codeDemo.diyIcon} keyIndex={4} list={expandedItems}/>
         </fieldset>
+        <h2>Porps 介绍</h2>
+        <Table
+            className={`table-theme-${theme}`}
+            columns={global.columns}
+
+        />
     </>)
 
 }
