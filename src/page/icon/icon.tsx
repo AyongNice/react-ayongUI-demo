@@ -9,7 +9,8 @@ import {
     Doubleleft, Aligntop, Alignbottom, Aligncenter, Enter, Rollback, Retweet, Swap,
     Swapleft, Swapright, Tick, Wrong, Lament, Illustrate, Delete, Search, Transfer,
     Unlock, Save, Message, Play, Panetop, Panedown, Paneleft, Paneright, Login, Logout,
-    Menufold, Menuunfold
+    Menufold, Menuunfold, Borderbottom, Borderhorizontal, Borderlnner, Bordersolid,
+    Borderleft, Borderight, Bordertop, Borderverticle
 } from "@/ayongUI/index.ts";
 import Tab from "./components/tab.tsx";
 import React from "react";
@@ -231,6 +232,38 @@ const Icon = () => {
         {
             cmp: Menuunfold,
             name: "Menuunfold",
+        },
+        {
+            cmp: Borderbottom,
+            name: "Borderbottom",
+        },
+        {
+            cmp: Bordertop,
+            name: "Bordertop",
+        },
+        {
+            cmp: Borderhorizontal,
+            name: "Borderhorizontal",
+        },
+        {
+            cmp: Borderverticle,
+            name: "Borderverticle",
+        },
+        {
+            cmp: Borderlnner,
+            name: "Borderlnner",
+        },
+        {
+            cmp: Bordersolid,
+            name: "Bordersolid",
+        },
+        {
+            cmp: Borderleft,
+            name: "Borderleft",
+        },
+        {
+            cmp: Borderight,
+            name: "Borderight",
         },
     ];
     const solidicon = [
