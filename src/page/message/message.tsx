@@ -81,13 +81,7 @@ const MessagePage = () => {
     const onUnfold = (): void => {
         setUnfold(!unfold);
     };
-    useEffect(
-        () => {
-            setInterval(() => {
-                // Message.info('This is a info message')
-            }, 30)
-        }, []
-    )
+
     const onMessage = () => {
         Message.info({
             message: 'This is a info message',

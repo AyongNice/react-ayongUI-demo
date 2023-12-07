@@ -1,52 +1,24 @@
-import React, {useState} from 'react';
+import React from 'react';
 // import {Button, Table} from "@/ayongUI/index.ts";
-import {Button, Table, CodeDisplay} from "@/ayongUI/index.ts";
+import {Button, Table} from "@/ayongUI/index.ts";
 
 import './index.less';
-import OmsSyntaxHighlight from '@/components/oms-syntax-high-light/oms-syntax-high-light.tsx';
+
 import TitleCom from '@/components/title-com/title-com.tsx';
 import codeDemo from './code-demo.ts';
-import ConditionalRender from '@/components/conditional-render/conditional-render.tsx';
+
 import global from '@/config/index.ts';
 import {useGlobalState} from '@/data-store/index.ts';
 import style from "./index.module.less";
+import useExpandableList from "@/components/code-display/index.ts";
+import CodeDisplayCom from "@/components/code-display/code-display.tsx";
 
 const ButtonPage = () => {
     const [theme, setTheme] = useGlobalState('theme');
 
-    const [unfold, setUnfold] = useState<boolean>(true);
-
-    /** 展开/折叠示例 **/
-    const onUnfold = (): void => {
-        setUnfold(!unfold);
-    };
-
     const onClick = (): void => {
     };
-    const [expandedItems, setExpandedItems] = useState<number[]>([]);
-    const list = [
-        1, 2, 3, 4,
-    ]
-    const handleItemClick = (itemId: number) => {
-        if (expandedItems?.includes(itemId)) {
-            // 如果项目已经展开，关闭它
-            setExpandedItems(expandedItems.filter(id => id !== itemId));
-        } else {
-            // 如果项目未展开，展开它
-            setExpandedItems([...expandedItems, itemId]);
-        }
-    };
-
-    const handleExpandAll = () => {
-        // 展开所有项目
-        // 这里假设你有一个项目列表的数组，每个项目都有一个唯一的id
-        setExpandedItems(list);
-        if (expandedItems.length === list.length) {
-            setExpandedItems([]);
-        } else {
-            setExpandedItems(list);
-        }
-    };
+    const {expandedItems, handleExpandItem, handleExpandAll} = useExpandableList([1, 2, 3, 4]);
 
     return (
         <div>
@@ -61,13 +33,8 @@ const ButtonPage = () => {
                 <Button className={style.button} type='warn'>warn-警告按钮</Button>
                 <Button className={style.button} type='safe'>safe-安全按钮</Button>
 
-                <ConditionalRender show={expandedItems.includes(1)}>
-                    <OmsSyntaxHighlight textContent={codeDemo.typeSetingcodeConut}/>
-                </ConditionalRender>
-                <div className={style.unfold}>
-                    <CodeDisplay onClick={() => handleItemClick(1)}/>
-                </div>
 
+                <CodeDisplayCom textContent={codeDemo.typeSetingcodeConut} keyIndex={1} list={expandedItems}/>
             </fieldset>
 
             <fieldset>
@@ -78,13 +45,7 @@ const ButtonPage = () => {
                 <Button className={style.button} type='primary' href='https://github.com/AyongNice/ayongUI'>
                     href-跳转按钮
                 </Button>
-
-                <ConditionalRender show={expandedItems.includes(2)}>
-                    <OmsSyntaxHighlight textContent={codeDemo.shapeSetingcodeConut}/>
-                </ConditionalRender>
-                <div className={style.unfold}>
-                    <CodeDisplay onClick={() => handleItemClick(2)}/>
-                </div>
+                <CodeDisplayCom textContent={codeDemo.shapeSetingcodeConut} keyIndex={2} list={expandedItems}/>
 
             </fieldset>
             <fieldset>
@@ -93,12 +54,7 @@ const ButtonPage = () => {
                     自定义样式
                 </Button>
 
-                <ConditionalRender show={expandedItems.includes(3)}>
-                    <OmsSyntaxHighlight textContent={codeDemo.classNameSetingcodeConut}/>
-                </ConditionalRender>
-                <div className={style.unfold}>
-                    <CodeDisplay onClick={() => handleItemClick(3)}/>
-                </div>
+                <CodeDisplayCom textContent={codeDemo.shapeSetingcodeConut} keyIndex={3} list={expandedItems}/>
 
             </fieldset>
 
@@ -107,12 +63,7 @@ const ButtonPage = () => {
                 <Button type='primary' onClick={onClick} time={1000}>
                     small-ayongUI
                 </Button>
-                <ConditionalRender show={expandedItems.includes(4)}>
-                    <OmsSyntaxHighlight textContent={codeDemo.debounceSetingcodeConut}/>
-                </ConditionalRender>
-                <div className={style.unfold}>
-                    <CodeDisplay onClick={() => handleItemClick(4)}/>
-                </div>
+                <CodeDisplayCom textContent={codeDemo.debounceSetingcodeConut} keyIndex={4} list={expandedItems}/>
 
             </fieldset>
 

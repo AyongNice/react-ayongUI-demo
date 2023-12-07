@@ -1,50 +1,44 @@
 import React from 'react';
-import {Button, Rate, Alert} from '@/ayongUI/index.ts';
-import ConditionalRender from "@/components/conditional-render/conditional-render.tsx";
-import OmsSyntaxHighlight from "@/components/oms-syntax-high-light/oms-syntax-high-light.tsx";
+import {Rate, Alert} from '@/ayongUI/index.ts';
+import codeDemo from "./code-demo.ts";
+import {useGlobalState} from '@/data-store/index.ts';
+import TitleCom from "@/components/title-com/title-com.tsx";
+import CodeDisplayCom from "@/components/code-display/code-display.tsx";
+import useExpandableList from "@/components/code-display/index.ts";
 
 const Ratepage: React.FC = () => {
 
-    const styleRet = {
-        "::after": {
-            background: "red",
-            // 其他样式...
-        },
-    }
-    return (<>
+    const [theme, setTheme] = useGlobalState('theme');
+    const {expandedItems, handleExpandItem, handleExpandAll} = useExpandableList([1, 2, 3, 4]);
 
+    return (<>
+        <TitleCom title='Rate' onUnfold={handleExpandAll}/>
         <fieldset>
             <legend>基本使用</legend>
             <Rate/>
-            {/*<ConditionalRender show={false}>*/}
-            {/*    <OmsSyntaxHighlight/>*/}
-            {/*</ConditionalRender>*/}
+            <CodeDisplayCom textContent={codeDemo.deft} keyIndex={1} list={expandedItems}/>
         </fieldset>
 
 
         <fieldset>
             <legend>只读</legend>
             <Rate disabled value={3}/>
-            {/*<ConditionalRender show={false}>*/}
-            {/*    <OmsSyntaxHighlight/>*/}
-            {/*</ConditionalRender>*/}
+            <CodeDisplayCom textContent={codeDemo.disabled} keyIndex={2} list={expandedItems}/>
+
         </fieldset>
 
 
         <fieldset>
             <legend>自定义color</legend>
             <Rate color='#cbbcf7' value={3}/>
-            {/*<ConditionalRender show={false}>*/}
-            {/*    <OmsSyntaxHighlight/>*/}
-            {/*</ConditionalRender>*/}
+            <CodeDisplayCom textContent={codeDemo.color} keyIndex={3} list={expandedItems}/>
+
         </fieldset>
 
         <fieldset>
             <legend>自定义icon</legend>
-            <Rate value={3} color='#cbbcf7' icon={Alert}/>
-            {/*<ConditionalRender show={false}>*/}
-            {/*    <OmsSyntaxHighlight/>*/}
-            {/*</ConditionalRender>*/}
+            <Rate value={3} icon={Alert}/>
+            <CodeDisplayCom textContent={codeDemo.diyIcon} keyIndex={4} list={expandedItems}/>
         </fieldset>
     </>)
 
