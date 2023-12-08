@@ -31,7 +31,7 @@ function App() {
             window.localStorage.setItem('theme', res);
             return res;
         });
-        setceshi(+new Date())
+        // setceshi(+new Date())
 
     }
 

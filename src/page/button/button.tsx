@@ -8,19 +8,16 @@ import TitleCom from '@/components/title-com/title-com.tsx';
 import codeDemo from './code-demo.ts';
 
 import global from '@/config/index.ts';
-import {useGlobalState} from '@/data-store/index.ts';
+import {useGlobalState} from '../../data-store/index.ts';
 import style from "./index.module.less";
 import useExpandableList from "@/components/code-display/index.ts";
 import CodeDisplayCom from "@/components/code-display/code-display.tsx";
 
 const ButtonPage = () => {
-    const [theme] = useGlobalState('theme');
+    const [theme, setTheme] = useGlobalState('theme');
     const onClick = (): void => {
-
     };
-    useEffect(()=>{
-        console.log('theme---ButtonPage',theme);
-    },[theme])
+
     const {expandedItems, handleExpandItem, handleExpandAll} = useExpandableList([1, 2, 3, 4]);
 
     return (

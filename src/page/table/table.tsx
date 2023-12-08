@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 // import {Table,CodeDisplay} from "dist";
-import {Table} from "@/ayongUI/index.ts";
+import {Table,Button} from "@/ayongUI/index.ts";
 import './index.less';
 import codeDemo from './code-demo.ts';
 import TitleCom from '../../components/title-com/title-com.tsx';
@@ -103,15 +103,9 @@ const cellActiveClassName = (record: Item) => {
  * @constructor
  */
 function TablePage() {
-    const [theme] = useGlobalState('theme');
-    const [ceshi] = useGlobalState('ceshi');
+    const [theme,setTheme] = useGlobalState('theme');
     const {expandedItems, handleExpandItem, handleExpandAll} = useExpandableList([1, 2, 3, 4]);
 
-    //计算属性
-    useEffect(()=>{
-        console.log('theme---TablePage',theme);
-        console.log('ceshi---TablePage',ceshi)
-    },[theme,ceshi])
 
     return (
         <div>
