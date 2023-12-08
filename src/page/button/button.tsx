@@ -16,9 +16,11 @@ import CodeDisplayCom from "@/components/code-display/code-display.tsx";
 const ButtonPage = () => {
     const [theme] = useGlobalState('theme');
     const onClick = (): void => {
-        console.log(12312, ceshi)
-        setceshi(+new Date())
+
     };
+    useEffect(()=>{
+        console.log('theme---ButtonPage',theme);
+    },[theme])
     const {expandedItems, handleExpandItem, handleExpandAll} = useExpandableList([1, 2, 3, 4]);
 
     return (

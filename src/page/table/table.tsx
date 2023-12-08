@@ -104,12 +104,14 @@ const cellActiveClassName = (record: Item) => {
  */
 function TablePage() {
     const [theme] = useGlobalState('theme');
+    const [ceshi] = useGlobalState('ceshi');
     const {expandedItems, handleExpandItem, handleExpandAll} = useExpandableList([1, 2, 3, 4]);
 
     //计算属性
     useEffect(()=>{
-        console.log('theme---TablePage',theme)
-    },[theme])
+        console.log('theme---TablePage',theme);
+        console.log('ceshi---TablePage',ceshi)
+    },[theme,ceshi])
 
     return (
         <div>
