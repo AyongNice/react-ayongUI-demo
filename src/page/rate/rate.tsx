@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Rate, Table, Alert} from '@/ayongUI/index.ts';
 import codeDemo from "./code-demo.ts";
 import {useGlobalState} from '@/data-store/index.ts';
@@ -11,9 +11,15 @@ const Ratepage: React.FC = () => {
 
     const [theme, setTheme] = useGlobalState('theme');
     const {expandedItems, handleExpandItem, handleExpandAll} = useExpandableList([1, 2, 3, 4]);
+    const [ceshi, setceshi] = useGlobalState('ceshi');
+
+    useEffect(()=>{
+        console.log('ceshi',ceshi)
+    },[ceshi])
 
     return (<>
         <TitleCom title='Rate' onUnfold={handleExpandAll}/>
+        {ceshi}
         <fieldset>
             <legend>基本使用</legend>
             <Rate/>

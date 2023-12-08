@@ -22,20 +22,18 @@ import {useGlobalState} from './data-store/index.ts';
 
 function App() {
     const [theme, setTheme] = useGlobalState('theme');
-    const countRef = useRef(0);
 
+    const [ceshi, setceshi] = useGlobalState('ceshi');
+    const toggleTheme = (): void => {
 
-    const toggleTheme = useCallback((): void => {
-        if (!countRef.current) {
-            (countRef.current++);
-            return;
-        }
         setTheme((previe: string) => {
             const res = previe === 'night' ? 'light' : 'night';
             window.localStorage.setItem('theme', res);
             return res;
         });
-    }, [theme]);
+        setceshi(+new Date())
+
+    }
 
     return (
         <div className={theme}>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 // import {Button, Table} from "@/ayongUI/index.ts";
 import {Button, Table} from "@/ayongUI/index.ts";
 
@@ -14,19 +14,19 @@ import useExpandableList from "@/components/code-display/index.ts";
 import CodeDisplayCom from "@/components/code-display/code-display.tsx";
 
 const ButtonPage = () => {
-    const [theme, setTheme] = useGlobalState('theme');
-
+    const [theme] = useGlobalState('theme');
     const onClick = (): void => {
+        console.log(12312, ceshi)
+        setceshi(+new Date())
     };
     const {expandedItems, handleExpandItem, handleExpandAll} = useExpandableList([1, 2, 3, 4]);
 
     return (
         <div>
-
             <TitleCom title='button' onUnfold={handleExpandAll}/>
             <fieldset>
                 <legend>type 类型 设置</legend>
-                <Button className={style.button}>默认类型</Button>
+                <Button onClick={onClick} className={style.button}>默认类型</Button>
                 <Button className={style.button} type='dashed'>dashed-虚线按钮</Button>
                 <Button className={style.button} type='primary'>primary-主题按钮</Button>
                 <Button className={style.button} type='error'>dangerous-危险按钮</Button>
