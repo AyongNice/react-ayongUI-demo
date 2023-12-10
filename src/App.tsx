@@ -16,14 +16,16 @@ import Rate from './page/rate/rate.tsx';
 import {Button} from './ayongUI/index.ts';
 
 import {useGlobalState} from './data-store/index.ts';
-import {setThemeColor} from "./utils/index.ts";
+import {calculateComplementaryColor, setThemeColor} from "./utils/index.ts";
+import {ModeAttribute} from "@/app";
 
 
 function App() {
     const [theme, setTheme] = useGlobalState('theme');
 
     useEffect(() => {
-        setThemeColor(window.localStorage.getItem('theme'));
+        const color: ModeAttribute = JSON.parse(window.localStorage.getItem('color') || '{}')
+        setThemeColor(window.localStorage.getItem('theme') || 'night', color);
     }, [])
 
     const toggleTheme = (): void => {
@@ -31,9 +33,18 @@ function App() {
         setThemeColor(theme);
         window.localStorage.setItem('theme', theme);
     }
-
+    const onColor = (e) => {
+        const color = {
+            color: calculateComplementaryColor(e.target.value),
+            background: e.target.value,
+        }
+        setThemeColor('diy', color);
+        window.localStorage.setItem('theme', 'diy');
+        window.localStorage.setItem('color', JSON.stringify(color));
+    }
     return (
         <div className={`theme margins`}>
+            <input onChange={onColor} type='color'/>
             <Button type='primary' onClick={toggleTheme}>
                 切换-主题
             </Button>
