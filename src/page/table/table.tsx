@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 // import {Table,CodeDisplay} from "dist";
-import {Table,Button} from "@/ayongUI/index.ts";
+import {Table, Button} from "@/ayongUI/index.ts";
 import './index.less';
 import codeDemo from './code-demo.ts';
 import TitleCom from '../../components/title-com/title-com.tsx';
@@ -103,7 +103,7 @@ const cellActiveClassName = (record: Item) => {
  * @constructor
  */
 function TablePage() {
-    const [theme,setTheme] = useGlobalState('theme');
+    const [theme, setTheme] = useGlobalState('theme');
     const {expandedItems, handleExpandItem, handleExpandAll} = useExpandableList([1, 2, 3, 4]);
 
 
@@ -115,7 +115,7 @@ function TablePage() {
                 <Table
                     data={data}
                     columns={columns}
-                    className={`table-theme-${theme}`}
+                    className='table-theme'
                     cellActiveClassName={cellActiveClassName}
                 />
                 <CodeDisplayCom textContent={codeDemo.essential} keyIndex={1} list={expandedItems}/>
@@ -124,7 +124,7 @@ function TablePage() {
 
             <fieldset>
                 <legend>JSX风格写法</legend>
-                <Table data={data} className={`table-theme-${theme}`}>
+                <Table data={data} className='table-theme'>
                     <Column title='Age' dataIndex='age' key={1}/>
                     <Column title='Address' dataIndex='address' key={2}/>
                     <Column
@@ -153,7 +153,7 @@ function TablePage() {
                     两种形式 false 为默认值. 默认不排序
                 </p>
                 <Table
-                    className={`table-theme-${theme}`}
+                    className='table-theme'
                     columns={columnsStore}
                     data={data}
                 />
@@ -162,7 +162,7 @@ function TablePage() {
             </fieldset>
             <fieldset>
                 <legend>表头分组</legend>
-                <Table data={data} className={`table-theme-${theme}`}>
+                <Table data={data} className='table-theme'>
                     <Column title='First Name' dataIndex='firstName' key={10}/>
                     <ColumnGroup title='Name' key={666}>
                         <Column title='Last Name' dataIndex='lastName' key={11}/>
@@ -194,7 +194,7 @@ function TablePage() {
                     data={data}
                     draggable
                     columns={columns}
-                    className={`table-theme-${theme}`}
+                    className='table-theme'
                 />
                 <CodeDisplayCom textContent={codeDemo.draggable} keyIndex={5} list={expandedItems}/>
 
@@ -204,7 +204,7 @@ function TablePage() {
             <fieldset>
                 <legend>展开折叠 行</legend>
                 <Table
-                    className={`table-theme-${theme}`}
+                    className='table-theme'
                     expandable={{
                         expandedRowRender: (record: Item) => (
                             <p>{record.name} 为你展示展开折叠行功能</p>
@@ -224,7 +224,7 @@ function TablePage() {
             <fieldset>
                 <legend>自定义 展开/折叠按钮</legend>
                 <Table
-                    className={`table-theme-${theme}`}
+                    className='table-theme'
                     expandable={{
                         expandedRowRender: (record) => (
                             <p>{record.name} 为你展示展开折叠行功能</p>
@@ -255,19 +255,19 @@ function TablePage() {
 
             <h3>Porps 介绍</h3>
             <Table
-                className={`table-theme-${theme}`}
+                className='table-theme'
                 columns={global.columns}
                 data={codeDemo.data}
             />
             <h4>expandable 展开功能参数 介绍</h4>
             <Table
-                className={`table-theme-${theme}`}
+                className='table-theme'
                 columns={global.columns}
                 data={codeDemo.expandableData}
             />
             <h4>expandIconProps 自定义展开icon参数 介绍</h4>
             <Table
-                className={`table-theme-${theme}`}
+                className='table-theme'
                 columns={global.columns}
                 data={codeDemo.expandIconPropsData}
             />

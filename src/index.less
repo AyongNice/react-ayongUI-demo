@@ -1,5 +1,5 @@
 
-#root {
+:root {
   /**
    再此处自定义组件主题色配置
    */
@@ -11,10 +11,19 @@
   --night-a-color: #242d41;
   --legend-p-color: #181823;
   --legend-color: #808080;
+  --theme-background-color: #181823;
+  --theme-font-color: #e8e6e3e0;
+  --theme-reverse: #8aabec;
+  --theme-reverse-font: #fff;
 }
 
 * {
   margin: 0;
+}
+
+.theme {
+  color: var(--theme-font-color);
+  background: var(--theme-background-color);
 }
 
 .light {
@@ -22,15 +31,19 @@
   box-sizing: border-box;
   color: var(--night-text-color) !important;
   background: var(--light-background-color) !important;
-  transition: all 1s;
+  transition: all .5s;
+}
+
+.margins {
+  padding: 15px;
+  box-sizing: border-box;
+  transition: all .5s;
 }
 
 .night {
-  padding: 15px;
-  box-sizing: border-box;
   color: var(--light-text-color) !important;
   background: var(--night-background-color) !important;
-  transition: all .5s;
+
 }
 
 fieldset {
@@ -48,17 +61,7 @@ fieldset {
 
 }
 
-.table-theme-night {
-  tbody {
-    color: #bcbcbc;
-  }
-}
 
-.table-theme-light {
-  //thead {
-  //  color: #bcbcbc;
-  //}
-}
 
 .show {
   display: block;
@@ -69,17 +72,12 @@ fieldset {
   display: none;
 }
 
-.table-theme-night {
-  background: #262635;
+.table-theme {
+  background: var(--theme-background-color);
 
   tbody {
-    color: #bcbcbc;
+    color: var(--theme-font-color);
+
   }
 }
 
-.table-theme-light {
-  background: rgba(244, 244, 241, 0.88);
-
-  tbody {
-  }
-}

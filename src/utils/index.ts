@@ -1,3 +1,5 @@
+import {Mode} from ".././app.d";
+
 /**
  *
  * @description: copy text 到粘贴板
@@ -27,4 +29,25 @@ export const copyText = (text: string): void => {
 
     document.body.removeChild(textarea);
 }
+
+/**
+ * @description: 设置主题颜色
+ * @param theme
+ */
+export const setThemeColor = (theme: keyof Mode) => {
+    const mode = {
+        'night': {
+            background: '#181823',
+            color: ' #e8e6e3e0'
+        },
+        'light': {
+            background: '#e8e6e3e0',
+            color: '#181823'
+        }
+    }
+    document.documentElement.style.setProperty('--theme-background-color', mode[theme].background);
+    document.documentElement.style.setProperty('--theme-font-color', mode[theme].color);
+}
+
+
 

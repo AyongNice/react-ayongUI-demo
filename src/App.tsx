@@ -13,29 +13,27 @@ import InputPage from './page/input/input.tsx';
 import TooltipPage from './page/tooltip/tooltip.tsx';
 import Message from './page/message/message.tsx';
 import Rate from './page/rate/rate.tsx';
-
-
 import {Button} from './ayongUI/index.ts';
 
 import {useGlobalState} from './data-store/index.ts';
+import {setThemeColor} from "./utils/index.ts";
 
 
 function App() {
     const [theme, setTheme] = useGlobalState('theme');
 
+    useEffect(() => {
+        setThemeColor(window.localStorage.getItem('theme'));
+    }, [])
 
     const toggleTheme = (): void => {
-
-        setTheme((previe: string) => {
-            const res = previe === 'night' ? 'light' : 'night';
-            window.localStorage.setItem('theme', res);
-            return res;
-        });
-
+        const theme = window.localStorage.getItem('theme') === 'night' ? 'light' : 'night';
+        setThemeColor(theme);
+        window.localStorage.setItem('theme', theme);
     }
 
     return (
-        <div className={theme}>
+        <div className={`theme margins`}>
             <Button type='primary' onClick={toggleTheme}>
                 切换-主题
             </Button>

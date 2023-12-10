@@ -10,17 +10,9 @@ import global from '@/config/index.ts';
 const Ratepage: React.FC = () => {
 
     const {expandedItems, handleExpandItem, handleExpandAll} = useExpandableList([1, 2, 3, 4]);
-    const [theme, setTheme] = useGlobalState('theme');
-
-    const [ceshi, setceshi] = useGlobalState('ceshi');
-
-    useEffect(()=>{
-        console.log('ceshi',ceshi)
-    },[ceshi])
 
     return (<>
         <TitleCom title='Rate' onUnfold={handleExpandAll}/>
-        {ceshi}
         <fieldset>
             <legend>基本使用</legend>
             <Rate/>
@@ -50,7 +42,7 @@ const Ratepage: React.FC = () => {
         </fieldset>
         <h2>Porps 介绍</h2>
         <Table
-            className={`table-theme-${theme}`}
+            className='table-theme'
             columns={global.columns}
             data={codeDemo.data}
 

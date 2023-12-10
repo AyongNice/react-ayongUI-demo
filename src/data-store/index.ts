@@ -15,8 +15,6 @@ const globalState: { callbacks: string[] } = new Proxy({
             target[key] = value;
             // 直接调用回调函数，通知所有订阅者
             target.callbacks.forEach((callback: Function) => {
-
-                console.log(callback)
                 return callback(key, value)
             });
             return true;

@@ -170,14 +170,14 @@ const MessagePage = () => {
             <h2>method 介绍</h2>
 
             <Table
-                className={`table-theme-${theme}`}
+                className='table-theme'
                 columns={columns}
                 data={data}
             />
 
             <h3>MessageProps入参详情介绍</h3>
             <Table
-                className={`table-theme-${theme}`}
+                className='table-theme'
                 columns={global.columns}
                 data={codeDemo.data}
             />

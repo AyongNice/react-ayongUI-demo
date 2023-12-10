@@ -68,7 +68,7 @@ const ButtonPage = () => {
 
             <h2>Porps 介绍</h2>
             <Table
-                className={`table-theme-${theme}`}
+                className='table-theme'
                 columns={global.columns}
                 data={codeDemo.data}
             />
