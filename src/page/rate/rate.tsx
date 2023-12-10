@@ -52,6 +52,7 @@ const Ratepage: React.FC = () => {
         <Table
             className={`table-theme-${theme}`}
             columns={global.columns}
+            data={codeDemo.data}
 
         />
     </>)

@@ -54,34 +54,34 @@ export default App;
 const data = [
     {
         key: '1',
-        name: 'message',
-        illustrate: '消息提示内容',
-        defaultValue: '-',
-        type: 'string | number | ReactNode',
+        name: 'count',
+        illustrate: '评分数量',
+        defaultValue: '5',
+        type: 'number',
         version: '1.0'
     },
     {
         key: '2',
-        name: 'showClose',
-        illustrate: '是否显示关闭按钮',
-        defaultValue: 'false',
+        name: 'color',
+        illustrate: '自定义高亮颜色',
+        defaultValue: 'gold',
         type: 'boolean',
         version: '1.0'
     },
     {
         key: '3',
-        name: 'useHTMLString',
-        illustrate: '是否将 message 属性作为 HTML 片段处理',
-        defaultValue: 'false',
-        type: 'string',
+        name: 'value',
+        illustrate: '当前分数',
+        defaultValue: '0',
+        type: 'number',
         version: '1.0'
     },
     {
         key: '4',
-        name: 'onClose',
-        illustrate: '关闭回调,只有在showClose为true时才有效',
-        defaultValue: '() => void',
-        type: ' () => void',
+        name: 'disabled',
+        illustrate: '是否只读',
+        defaultValue: 'false',
+        type: 'boolean',
         version: '1.0'
     },
     {
@@ -90,6 +90,15 @@ const data = [
         illustrate: '自定义 Icon',
         defaultValue: '-',
         type: 'React.Fc',
+        version: '1.0'
+
+    },
+    {
+        key: '6',
+        name: 'onChange',
+        illustrate: '评分变化时候',
+        defaultValue: '-',
+        type: '(selectedRating: number) => void',
         version: '1.0'
 
     }
