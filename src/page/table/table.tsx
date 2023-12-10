@@ -109,7 +109,6 @@ function TablePage() {
 
     return (
         <div>
-            {theme}
             <TitleCom title='Table' onUnfold={handleExpandAll}/>
             <fieldset>
                 <legend>指定 data 和 columns数据基本写法</legend>
