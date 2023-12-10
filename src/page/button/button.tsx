@@ -14,7 +14,7 @@ import useExpandableList from "@/components/code-display/index.ts";
 import CodeDisplayCom from "@/components/code-display/code-display.tsx";
 
 const ButtonPage = () => {
-    const [theme, setTheme] = useGlobalState('theme');
+    const [theme] = useGlobalState('theme');
     const onClick = (): void => {
     };
 

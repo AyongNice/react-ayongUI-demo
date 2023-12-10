@@ -23,7 +23,7 @@ import {useGlobalState} from './data-store/index.ts';
 function App() {
     const [theme, setTheme] = useGlobalState('theme');
 
-    const [ceshi, setceshi] = useGlobalState('ceshi');
+
     const toggleTheme = (): void => {
 
         setTheme((previe: string) => {
@@ -31,7 +31,6 @@ function App() {
             window.localStorage.setItem('theme', res);
             return res;
         });
-        // setceshi(+new Date())
 
     }
 

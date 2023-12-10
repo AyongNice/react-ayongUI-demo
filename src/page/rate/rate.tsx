@@ -9,8 +9,9 @@ import global from '@/config/index.ts';
 
 const Ratepage: React.FC = () => {
 
-    const [theme, setTheme] = useGlobalState('theme');
     const {expandedItems, handleExpandItem, handleExpandAll} = useExpandableList([1, 2, 3, 4]);
+    const [theme, setTheme] = useGlobalState('theme');
+
     const [ceshi, setceshi] = useGlobalState('ceshi');
 
     useEffect(()=>{

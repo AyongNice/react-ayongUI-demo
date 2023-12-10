@@ -70,7 +70,11 @@ npm run dev
 
 ## 使用说明
 
-1. 组件开发完成 在demo组件内必须写好 md文件使用说明文档 参考ayong-button.md 文档格式
+1. 组件开发完成 在demo组件内 使用fieldset标签包裹组件 进行组件效果演示, 
+2. demo统一使用 TitleCom 标题组件  和 CodeDisplayCom代码示例组件 详情参考 button的演示效果 
+3. 组件入参数 props 使用 表格组件进行说明 表格列字段统一使用公共 global.columns
+
+ 
 
 ## 测试流程
 ### 开发模式

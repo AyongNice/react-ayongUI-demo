@@ -12,14 +12,13 @@ const globalState: { callbacks: string[] } = new Proxy({
     {
         set: (target: { callback: string[] }, key: string | symbol, value): boolean => {
 
-
             target[key] = value;
             // 直接调用回调函数，通知所有订阅者
-            target.callbacks.forEach((callback: Function) =>{
+            target.callbacks.forEach((callback: Function) => {
 
                 console.log(callback)
-             return    callback(key, value)
-            } );
+                return callback(key, value)
+            });
             return true;
         },
     });
@@ -31,11 +30,8 @@ export const useGlobalState = (key) => {
     useEffect(() => {
         // 在组件挂载时添加回调函数
         globalState.callbacks.push((changedKey: string, changedValue: string): void => {
-            setState(changedValue);
             if (changedKey === key) {
-
-                console.log('set')
-
+                setState(changedValue);
             }
         });
 

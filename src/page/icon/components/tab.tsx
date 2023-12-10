@@ -1,11 +1,14 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import "./tab.less";
 import {useGlobalState} from "../../../data-store/index.ts";
 
 const Tab = (props) => {
     const [activeTab, setActiveTab] = useState(props.defaultActiveTab);
     const [theme, setTheme] = useGlobalState('theme');
-
+    const [ceshi, setceshi] = useGlobalState('ceshi');
+    useEffect(()=>{
+        console.log('theme---Tab',theme,ceshi);
+    },[theme,ceshi])
     return (
         <div className="tab">
             <ul className="tab-header">
