@@ -1,7 +1,6 @@
 import React, {useEffect} from 'react';
 import {Rate, Table, Alert} from '@/ayongUI/index.ts';
 import codeDemo from "./code-demo.ts";
-import {useGlobalState} from '@/data-store/index.ts';
 import TitleCom from "@/components/title-com/title-com.tsx";
 import CodeDisplayCom from "@/components/code-display/code-display.tsx";
 import useExpandableList from "@/components/code-display/index.ts";
