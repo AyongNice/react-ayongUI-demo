@@ -9,7 +9,7 @@ import global from '@/config/index.ts';
 
 const Ratepage: React.FC = () => {
 
-    const {expandedItems, handleExpandItem, handleExpandAll} = useExpandableList([1, 2, 3, 4]);
+    const {expandedItems, handleExpandAll} = useExpandableList([1, 2, 3, 4]);
 
     return (<>
         <TitleCom title='Rate' onUnfold={handleExpandAll}/>

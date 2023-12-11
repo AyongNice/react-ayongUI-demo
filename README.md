@@ -3,7 +3,7 @@
 ## 介绍
 
 这是一个react组件库的demo，用于学习react组件库的开发
-## 该组件库技术属于 原生React jsx开发 无需任何第三方库
+## 该组件库技术属于 原生React jsx开发 无需任何第三方库,除动画以外不运行使用第三方UI库
 
 ## 开始使用
 
@@ -59,7 +59,7 @@ npm run dev
 
 ## 组件开发规范JS TS类型声明文件
 
-1. 声明的TS类必须单独创建改组件的类型文件 例如：table.d.ts 放在 当前文件夹下
+1. 声明的TS类必须单独创建改组件的类型文件 例如：index.d.ts 放在 当前文件夹下
 
 ## 开源组件开发规范
 
@@ -68,11 +68,13 @@ npm run dev
 1. 变量名 方法名必须使用小驼峰 纯英语翻译 如果实在不知道怎么翻译 可以添加前缀 ayong
 2. 组件内部JS 单个方法代码量超过20行必须处抽离到外部文件 如果是公共可服用 放到 utils文件内, 如果不可复用放到当前组件文件夹内
 
-## 使用说明
+## 组件使用说明
 
 1. 组件开发完成 在demo组件内 使用fieldset标签包裹组件 进行组件效果演示, 
 2. demo统一使用 TitleCom 标题组件  和 CodeDisplayCom代码示例组件 详情参考 button的演示效果 
 3. 组件入参数 props 使用 表格组件进行说明 表格列字段统一使用公共 global.columns
+4. 组件代码示例 展开收起功能 请使用 useExpandableList 公共hook  详情参考 button的演示效果
+5. demo 如果需要某些样式需要设置颜色 css   请使用  var(--theme-font-color) 和var(--theme-background-color)
 
  
 

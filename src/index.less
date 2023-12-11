@@ -26,13 +26,15 @@
   background: var(--theme-background-color);
 }
 
-.light {
-  padding: 15px;
-  box-sizing: border-box;
-  color: var(--night-text-color) !important;
-  background: var(--light-background-color) !important;
-  transition: all .5s;
+.table-theme {
+  background: var(--theme-background-color);
+
+  tbody {
+    color: var(--theme-font-color);
+
+  }
 }
+
 
 .margins {
   padding: 15px;
@@ -40,11 +42,7 @@
   transition: all .5s;
 }
 
-.night {
-  color: var(--light-text-color) !important;
-  background: var(--night-background-color) !important;
 
-}
 
 fieldset {
   border: 1px solid #565151;
@@ -72,12 +70,4 @@ fieldset {
   display: none;
 }
 
-.table-theme {
-  background: var(--theme-background-color);
-
-  tbody {
-    color: var(--theme-font-color);
-
-  }
-}
 

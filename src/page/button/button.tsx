@@ -18,7 +18,7 @@ const ButtonPage = () => {
     const onClick = (): void => {
     };
 
-    const {expandedItems, handleExpandItem, handleExpandAll} = useExpandableList([1, 2, 3, 4]);
+    const {expandedItems,handleExpandAll} = useExpandableList([1, 2, 3, 4]);
 
     return (
         <div>
