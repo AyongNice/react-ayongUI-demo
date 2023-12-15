@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 // import {Button, Table} from "@/ayongUI/index.ts";
-import {Button, Table} from "@/ayongUI/index.ts";
+import {Button, Select, Table} from "@/ayongUI/index.ts";
 
 import './index.less';
 
@@ -18,11 +18,25 @@ const ButtonPage = () => {
     const onClick = (): void => {
     };
 
-    const {expandedItems,handleExpandAll} = useExpandableList([1, 2, 3, 4]);
-
+    const {expandedItems, handleExpandAll} = useExpandableList([1, 2, 3, 4]);
+    const handleChange = (value: any) => {
+        console.log(`selected ${value}`);
+    };
     return (
         <div>
+
             <TitleCom title='button' onUnfold={handleExpandAll}/>
+            <Select
+                defaultValue="lucy"
+                style={{width: 120}}
+                onChange={handleChange}
+                options={[
+                    {value: 'jack', label: 'Jack'},
+                    {value: 'lucy', label: 'Lucy'},
+                    {value: 'Yiminghe', label: 'yiminghe'},
+                    {value: 'disabled', label: 'Disabled', disabled: true},
+                ]}
+            />
             <fieldset>
                 <legend>type 类型 设置</legend>
                 <Button onClick={onClick} className={style.button}>默认类型</Button>

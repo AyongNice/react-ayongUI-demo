@@ -9,6 +9,21 @@ export default defineConfig({
 			'@': './src', // 将@src映射到实际的源代码目录
 		},
 	},
+	//vite 开启network
+	server: {
+		// host: '192.168.33.52',
+		proxy: {
+			'/api': {
+				target: 'http://localhost:3000',
+				changeOrigin: true,
+				rewrite: (path) => path.replace(/^\/api/, ''),
+
+
+			}
+		}
+
+
+	},
 	build: {
 		rollupOptions: {
 			output: {

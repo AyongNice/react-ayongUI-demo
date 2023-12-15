@@ -21,11 +21,12 @@ import {ModeAttribute} from "@/app";
 
 
 function App() {
-    const [theme, setTheme] = useGlobalState('theme');
+    const [show, setShow] = useState<boolean>(false);
 
     useEffect(() => {
         const color: ModeAttribute = JSON.parse(window.localStorage.getItem('color') || '{}')
         setThemeColor(window.localStorage.getItem('theme') || 'night', color);
+        setShow(true)
     }, [])
 
     const toggleTheme = (): void => {
@@ -43,29 +44,37 @@ function App() {
         window.localStorage.setItem('color', JSON.stringify(color));
     }
     return (
-        <div className={`theme margins`}>
-            <input onChange={onColor} type='color'/>
-            <Button type='primary' onClick={toggleTheme}>
-                切换-主题
-            </Button>
-            <Routes>
-                {/*重定向*/}
-                <Route path='/' element={<Navigate to='/menu/button'/>}></Route>
-                <Route path='/menu' element={<MenuList/>}>
-                    <Route path='/menu/button' element={<ButtonPage/>}/>
-                    <Route path='/menu/table' element={<Table/>}/>
-                    <Route path='/menu/icon' element={<Icon/>}/>
-                    <Route path='/menu/switch' element={<SwitchPage/>}/>
-                    <Route path='/menu/radio' element={<RadioPage/>}/>
-                    <Route path='/menu/input' element={<InputPage/>}/>
-                    <Route path='/menu/tooltip' element={<TooltipPage/>}/>
-                    <Route path='/menu/message' element={<Message/>}/>
-                    <Route path='/menu/rate' element={<Rate/>}/>
+        <>
+            {
+                show ?
+                    <div className={`theme margins`}>
+                        <input onChange={onColor} type='color'/>
+                        <Button type='primary' onClick={toggleTheme}>
+                            切换-主题
+                        </Button>
+                        <Routes>
+                            {/*重定向*/}
+                            <Route path='/' element={<Navigate to='/menu/button'/>}></Route>
+                            <Route path='/menu' element={<MenuList/>}>
+                                <Route path='/menu/button' element={<ButtonPage/>}/>
+                                <Route path='/menu/table' element={<Table/>}/>
+                                <Route path='/menu/icon' element={<Icon/>}/>
+                                <Route path='/menu/switch' element={<SwitchPage/>}/>
+                                <Route path='/menu/radio' element={<RadioPage/>}/>
+                                <Route path='/menu/input' element={<InputPage/>}/>
+                                <Route path='/menu/tooltip' element={<TooltipPage/>}/>
+                                <Route path='/menu/message' element={<Message/>}/>
+                                <Route path='/menu/rate' element={<Rate/>}/>
 
-                </Route>
-            </Routes>
-        </div>
-    );
+                            </Route>
+                        </Routes>
+                    </div>
+                    : ''}
+        </>
+
+
+    )
+
 }
 
 export default App;
