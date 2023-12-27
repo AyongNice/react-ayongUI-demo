@@ -13,7 +13,7 @@ const MENULIST: Menu[] = [
     {title: 'tooltip组件', path: '/tooltip', id: +new Date() + ''},
     {title: 'Message全局提示', path: '/message', id: +new Date() + ''},
     {title: 'Rate评分', path: '/rate', id: +new Date() + ''},
-
+    {title: 'Pagination组件', path: '/pagination', id: +new Date() + ''},
 ];
 
 const THEME: string[] = ['night', 'light']; //白天 .晚上主题
